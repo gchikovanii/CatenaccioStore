@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FxkgHIlqOo5wOyC/AB+X1lv4cA14g3KQ6HcPxIG0++o/hH/E/rEvg1u6K48WGAidMsG7PAaTPuNnUtMX6rgOBQ==",
+  "dgSpecHash": "vXKCTVeleLa/71/SM2yjrjRXku1RmSvd/deMpx01ePjzmCz9zUaB21fbyyf8x5zx7Qwg9B0l+KM/mLt7wps1eQ==",
   "success": true,
   "projectFilePath": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.API\\CatenaccioStore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
