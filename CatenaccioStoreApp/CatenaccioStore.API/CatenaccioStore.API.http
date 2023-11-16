@@ -1,0 +1,6 @@
+@CatenaccioStore.API_HostAddress = http://localhost:5270
+
+GET {{CatenaccioStore.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
