@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\Extensions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CatenaccioStore.Application\CatenaccioStore.Application.csproj" />
     <ProjectReference Include="..\CatenaccioStore.Domain\CatenaccioStore.Domain.csproj" />
     <ProjectReference Include="..\CatenaccioStore.Persistence\CatenaccioStore.Persistence.csproj" />

@@ -3,7 +3,7 @@
 
 namespace CatenaccioStore.Domain.Entities.Users
 {
-    public class AppUser : IdentityUser<string>
+    public class AppUser : IdentityUser<int>
     {
         public ICollection<AppUserRole> AppUserRoles { get; set; }
     }

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CatenaccioStore.Persistence\CatenaccioStore.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

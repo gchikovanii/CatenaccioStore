@@ -10,3 +10,11 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\C
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\refint\CatenaccioStore.Application.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\CatenaccioStore.Application.pdb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\ref\CatenaccioStore.Application.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Domain.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Infrastructure.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Persistence.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Infrastructure.pdb
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Domain.pdb
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Persistence.pdb
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\CatenaccioStore.Application.csproj.AssemblyReference.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\CatenaccioStore.Application.csproj.CopyComplete

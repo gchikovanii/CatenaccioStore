@@ -1,4 +1,6 @@
+using CatenaccioStore.API.Infrastructure.Extensions;
 using CatenaccioStore.API.Infrastructure.Middlewares;
+using CatenaccioStore.Application.Infrastruture.Extensions;
 using CatenaccioStore.Domain.Entities.Users;
 using CatenaccioStore.Persistence.DataContext;
 using CatenaccioStore.Persistence.store;
@@ -10,7 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddServices();
+builder.Services.AddCustomSwagger();
+builder.Services.AddJwt(builder.Configuration);
 #region Sql Connection
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -31,7 +35,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

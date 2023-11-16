@@ -143,3 +143,8 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\obj\Debug\net8.0\refint\Ca
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\obj\Debug\net8.0\CatenaccioStore.API.pdb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\obj\Debug\net8.0\CatenaccioStore.API.genruntimeconfig.cache
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\obj\Debug\net8.0\ref\CatenaccioStore.API.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Mapster.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Mapster.Core.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CatenaccioStore.Infrastructure.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CatenaccioStore.Infrastructure.pdb
