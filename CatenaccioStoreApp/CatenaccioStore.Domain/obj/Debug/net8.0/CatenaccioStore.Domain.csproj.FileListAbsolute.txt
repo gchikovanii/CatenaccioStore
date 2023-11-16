@@ -1,0 +1,13 @@
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\bin\Debug\net8.0\CatenaccioStore.Domain.deps.json
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\bin\Debug\net8.0\CatenaccioStore.Domain.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\bin\Debug\net8.0\CatenaccioStore.Domain.pdb
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.csproj.AssemblyReference.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.AssemblyInfoInputs.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.AssemblyInfo.cs
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.csproj.CoreCompileInputs.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.sourcelink.json
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\refint\CatenaccioStore.Domain.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\CatenaccioStore.Domain.pdb
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Domain\obj\Debug\net8.0\ref\CatenaccioStore.Domain.dll

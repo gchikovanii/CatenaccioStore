@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace CatenaccioStore.Domain.Entities.Users
 {
-    public class AppUserRole
+    public class AppUserRole : IdentityUserRole<string>
     {
+        public AppUser AppUser { get; set; }
+        public AppRole AppRole { get; set; }
     }
 }

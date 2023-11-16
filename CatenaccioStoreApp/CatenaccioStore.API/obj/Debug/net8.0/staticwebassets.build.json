@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OlaTfBlk9yNsBbNKX6ChlhNZbUpPOZHzMFKWQFzTbWM=",
+  "Source": "CatenaccioStore.API",
+  "BasePath": "_content/CatenaccioStore.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
