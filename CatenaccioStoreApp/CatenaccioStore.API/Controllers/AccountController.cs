@@ -5,6 +5,7 @@ using CatenaccioStore.Application.Services.Accounts.DTOs;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace CatenaccioStore.API.Controllers
 {
@@ -20,55 +21,127 @@ namespace CatenaccioStore.API.Controllers
         [HttpGet("GetByEmail")]
         public async Task<IActionResult> GetByEmail(string email)
         {
-            return Ok(await _accountService.GetUserByEmail(email));
+            try
+            {
+                return Ok(await _accountService.GetUserByEmail(email));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
-            return Ok(await _accountService.GetAll());
+            try
+            {
+                return Ok(await _accountService.GetAll());
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.Admin)]
         [HttpPost("Roles")]
         public async Task<IActionResult> CreateRoles(UserRoles role)
         {
-            return Ok(await _accountService.CreateRoles(role));
+            try
+            {
+                return Ok(await _accountService.CreateRoles(role));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.Admin)]
         [HttpPost("Moderator")]
         public async Task<IActionResult> AddUser(AccountDto input)
         {
-            return Ok(await _accountService.CreateModerator(input));
+            try
+            {
+                return Ok(await _accountService.CreateModerator(input));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.Admin)]
         [HttpPost("Admin")]
         public async Task<IActionResult> AddAdmin(AccountDto input)
         {
-            return Ok(await _accountService.CreateAdmin(input));
+            try
+            {
+                return Ok(await _accountService.CreateAdmin(input));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.Admin)]
         [HttpPut("UpdateUserName")]
         public async Task<IActionResult> Update(string email, string userName)
         {
-            return Ok(await _accountService.UpdateUserName(email, userName));
+            try
+            {
+                return Ok(await _accountService.UpdateUserName(email, userName));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.Admin)]
         [HttpDelete]
         public async Task<IActionResult> Delete(string email)
         {
-            return Ok(await _accountService.DeleteUser(email));
+            try
+            {
+                return Ok(await _accountService.DeleteUser(email));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
 
         [HttpPost("Registration")]
         public async Task<IActionResult> Register(AccountDto input)
         {
-            return Ok(await _accountService.Register(input));
+            try
+            {
+                return Ok(await _accountService.Register(input));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
 
         [HttpPost("Login")]
         public async Task<IActionResult> LogIn(string email, string password)
         {
-            return Ok(await _accountService.LogIn(email, password));
+            try
+            {
+                return Ok(await _accountService.LogIn(email, password));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
     }
 }

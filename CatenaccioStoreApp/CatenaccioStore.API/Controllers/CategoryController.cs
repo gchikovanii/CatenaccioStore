@@ -3,6 +3,7 @@ using CatenaccioStore.Application.Services.Products.Abstraction;
 using CatenaccioStore.Application.Services.Products.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace CatenaccioStore.API.Controllers
 {
@@ -18,25 +19,57 @@ namespace CatenaccioStore.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories(CancellationToken token)
         {
-            return Ok(await _categoryService.GetAll(token));
+            try
+            {
+                return Ok(await _categoryService.GetAll(token));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpPost]
         public async Task<IActionResult> AddCategory(CancellationToken token,CreateCategoryDto input)
         {
-            return Ok(await _categoryService.AddCategory(token,input));
+            try
+            {
+                return Ok(await _categoryService.AddCategory(token, input));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpPut]
         public async Task<IActionResult> Update(CancellationToken token, string categoryName, string newCategoryName)
         {
-            return Ok(await _categoryService.UpdateCategory(token,categoryName,newCategoryName));
+            try
+            {
+                return Ok(await _categoryService.UpdateCategory(token, categoryName, newCategoryName));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpDelete]
         public async Task<IActionResult> Delete(CancellationToken token,string categoryName)
         {
-            return Ok(await _categoryService.DeleteCategory(token,categoryName));
+            try
+            {
+                return Ok(await _categoryService.DeleteCategory(token, categoryName));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
     }
 }

@@ -1,8 +1,11 @@
 ﻿using CatenaccioStore.API.Infrastructure.constans;
 using CatenaccioStore.Application.Services.Products.Abstraction;
 using CatenaccioStore.Application.Services.Products.DTOs;
+using CatenaccioStore.Application.Services.Products.Implementation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CatenaccioStore.API.Controllers
 {
@@ -18,49 +21,113 @@ namespace CatenaccioStore.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts(CancellationToken token)
         {
-            return Ok(await _productService.GetAllProducts(token));
+            try
+            {
+                return Ok(await _productService.GetAllProducts(token));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.User)]
         [HttpGet("GetFilteredProducts")]
         public async Task<IActionResult> GetFilteredProducts(CancellationToken token, string? brand, string? category)
         {
-            return Ok(await _productService.FilteredProducts(token,brand,category));
+            try
+            {
+                return Ok(await _productService.FilteredProducts(token, brand, category)); ;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.User)]
         [HttpGet("GetPaginatedProducts")]
         public async Task<IActionResult> GetPaginatedProducts(CancellationToken token, int pageIndex, int pageSize)
         {
-            return Ok(await _productService.GetAllProductsPaginated(token, pageIndex, pageSize));
+            try
+            {
+                return Ok(await _productService.GetAllProductsPaginated(token, pageIndex, pageSize));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.User)]
         [HttpGet("SearchProducts")]
         public async Task<IActionResult> SearchProducts(CancellationToken token, string name)
         {
-            return Ok(await _productService.SearchProducts(token, name));
+            try
+            {
+                return Ok(await _productService.SearchProducts(token, name));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.User)]
         [HttpGet("SortProducts")]
         public async Task<IActionResult> SortProducts(CancellationToken token, string sort)
         {
-            return Ok(await _productService.GetAllProductsSortedBy(token, sort));
+            try
+            {
+                return Ok(await _productService.GetAllProductsSortedBy(token, sort));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpPost]
         public async Task<IActionResult> AddProduct(CancellationToken token, CreationProductDto product)
         {
-            return Ok(await _productService.AddProduct(product, token));
+            try
+            {
+                return Ok(await _productService.AddProduct(product, token));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpPut]
         public async Task<IActionResult> UpdateProduct(CancellationToken token, UpdateProductDto product)
         {
-            return Ok(await _productService.UpdateProductPrice(product, token));
+            try
+            {
+                return Ok(await _productService.UpdateProductPrice(product, token));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpDelete]
         public async Task<IActionResult> DeleteProduct(CancellationToken token, string productName)
         {
-            return Ok(await _productService.DeleteProduct(productName, token));
+            try
+            {
+                return Ok(await _productService.DeleteProduct(productName, token));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message, ex);
+                return StatusCode(500, "Internal Server Error");
+            }
         }
 
     }

@@ -149,3 +149,12 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Microsoft
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CatenaccioStore.Infrastructure.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CatenaccioStore.Infrastructure.pdb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CloudinaryDotNet.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Sinks.File.dll
