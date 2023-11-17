@@ -15,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddServices();
 builder.Services.AddCustomSwagger();
 builder.Services.AddJwt(builder.Configuration);
+builder.Services.AddCloudinary(builder.Configuration);
+
 #region Sql Connection
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

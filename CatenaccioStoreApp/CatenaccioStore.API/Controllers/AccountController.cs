@@ -1,8 +1,11 @@
 ﻿using CatenaccioStore.API.Infrastructure.constans;
-using CatenaccioStore.Application.Services.Abstraction;
-using CatenaccioStore.Application.Services.constant;
-using CatenaccioStore.Application.Services.DTOs;
+using CatenaccioStore.Application.Services.Accounts.Abstraction;
+using CatenaccioStore.Application.Services.Accounts.constant;
+using CatenaccioStore.Application.Services.Accounts.DTOs;
+using CatenaccioStore.Application.Services.Cloudinaries.Abstraction;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatenaccioStore.API.Controllers
@@ -10,10 +13,12 @@ namespace CatenaccioStore.API.Controllers
     public class AccountController : BaseController
     {
         private readonly IAccountService _accountService;
+        private readonly ICloudinaryService _cloud;
 
-        public AccountController(IAccountService accountService)
+        public AccountController(IAccountService accountService, ICloudinaryService cloud)
         {
             _accountService = accountService;
+            _cloud = cloud;
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpGet("GetByEmail")]
@@ -69,5 +74,20 @@ namespace CatenaccioStore.API.Controllers
         {
             return Ok(await _accountService.LogIn(email, password));
         }
+
+        //[HttpPost("Test")]
+        //public async Task<IActionResult> UplaodImage(IFormFile file)
+        //{
+        //    var result = await _cloud.UploadImage(file);
+        //    return Ok(result);
+        //}
+        //[HttpPost("Test2")]
+        //public async Task<IActionResult> UplaodImages(List<IFormFile> files)
+        //{
+        //    var result = await _cloud.UploadImages(files);
+        //    return Ok(result);
+        //}
+
+
     }
 }

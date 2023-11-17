@@ -148,3 +148,4 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Mapster.C
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CatenaccioStore.Infrastructure.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CatenaccioStore.Infrastructure.pdb
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\CloudinaryDotNet.dll

@@ -1,6 +1,6 @@
 ﻿using CatenaccioStore.Application.Infrastruture.JWT;
-using CatenaccioStore.Application.Services.Abstraction;
-using CatenaccioStore.Application.Services.Implementation;
+using CatenaccioStore.Application.Services.Accounts.Abstraction;
+using CatenaccioStore.Application.Services.Accounts.Implementation;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction;
 using CatenaccioStore.Infrastructure.Repositories.Implementation;
 using CatenaccioStore.Infrastructure.Units;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatenaccioStore.Application.Services.constant
+namespace CatenaccioStore.Application.Services.Accounts.constant
 {
     public enum Role
     {

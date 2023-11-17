@@ -1,7 +1,7 @@
-﻿using CatenaccioStore.Application.Services.constant;
-using CatenaccioStore.Application.Services.DTOs;
+﻿using CatenaccioStore.Application.Services.Accounts.constant;
+using CatenaccioStore.Application.Services.Accounts.DTOs;
 
-namespace CatenaccioStore.Application.Services.Abstraction
+namespace CatenaccioStore.Application.Services.Accounts.Abstraction
 {
     public interface IAccountService
     {

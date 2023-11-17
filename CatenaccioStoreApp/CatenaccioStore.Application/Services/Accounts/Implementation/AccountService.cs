@@ -1,15 +1,15 @@
 ﻿using CatenaccioStore.Application.Infrastruture.Errors;
 using CatenaccioStore.Application.Infrastruture.JWT;
-using CatenaccioStore.Application.Services.Abstraction;
-using CatenaccioStore.Application.Services.constant;
-using CatenaccioStore.Application.Services.DTOs;
+using CatenaccioStore.Application.Services.Accounts.Abstraction;
+using CatenaccioStore.Application.Services.Accounts.constant;
+using CatenaccioStore.Application.Services.Accounts.DTOs;
 using CatenaccioStore.Domain.Entities.Users;
 using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
-namespace CatenaccioStore.Application.Services.Implementation
+namespace CatenaccioStore.Application.Services.Accounts.Implementation
 {
     public class AccountService : IAccountService
     {
