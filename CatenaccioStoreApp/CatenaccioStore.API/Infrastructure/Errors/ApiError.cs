@@ -1,4 +1,4 @@
-﻿using CatenaccioStore.Application.Infrastruture.Errors;
+﻿using CatenaccioStore.Infrastructure.Errors;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 

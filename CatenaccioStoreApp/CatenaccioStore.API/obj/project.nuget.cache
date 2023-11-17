@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XQ4cHyhUHCjkV/TSbGuYHupMpq/CIFZvu0YFvTYcsRQL5BiDFEFBWUacOX1Bswg5fqcw6F51GITASJaa8CJgLg==",
+  "dgSpecHash": "Nk6iQ9vmESTxrGXjORwoR83j9xxZHLx8ek9tO4UBFUTZMJ580S+Zno3Hy3d8rsSNhdLbCjNL1WZEgHp/R6OhpA==",
   "success": true,
   "projectFilePath": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.API\\CatenaccioStore.API.csproj",
   "expectedPackageFiles": [
@@ -74,6 +74,7 @@
     "C:\\Users\\gchik\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

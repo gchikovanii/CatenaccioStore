@@ -13,6 +13,6 @@ namespace CatenaccioStore.Application.Services.Accounts.Abstraction
         Task<bool> CreateAdmin(AccountDto account);
         Task<bool> UpdateUserName(string email, string userName);
         Task<bool> DeleteUser(string email);
-        Task<bool> CreateRoles(Role role);
+        Task<bool> CreateRoles(UserRoles role);
     }
 }

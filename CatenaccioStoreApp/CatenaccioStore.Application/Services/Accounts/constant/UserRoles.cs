@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatenaccioStore.Application.Services.Accounts.constant
 {
-    public enum Role
+    public enum UserRoles
     {
         Admin, Moderator, User
     }

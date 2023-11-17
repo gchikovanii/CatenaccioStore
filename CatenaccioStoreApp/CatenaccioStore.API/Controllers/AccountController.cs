@@ -2,10 +2,8 @@
 using CatenaccioStore.Application.Services.Accounts.Abstraction;
 using CatenaccioStore.Application.Services.Accounts.constant;
 using CatenaccioStore.Application.Services.Accounts.DTOs;
-using CatenaccioStore.Application.Services.Cloudinaries.Abstraction;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatenaccioStore.API.Controllers
@@ -13,12 +11,10 @@ namespace CatenaccioStore.API.Controllers
     public class AccountController : BaseController
     {
         private readonly IAccountService _accountService;
-        private readonly ICloudinaryService _cloud;
 
-        public AccountController(IAccountService accountService, ICloudinaryService cloud)
+        public AccountController(IAccountService accountService)
         {
             _accountService = accountService;
-            _cloud = cloud;
         }
         [Authorize(Roles = UserType.AdminModerator)]
         [HttpGet("GetByEmail")]
@@ -34,7 +30,7 @@ namespace CatenaccioStore.API.Controllers
         }
         [Authorize(Roles = UserType.Admin)]
         [HttpPost("Roles")]
-        public async Task<IActionResult> CreateRoles(Role role)
+        public async Task<IActionResult> CreateRoles(UserRoles role)
         {
             return Ok(await _accountService.CreateRoles(role));
         }
@@ -62,32 +58,17 @@ namespace CatenaccioStore.API.Controllers
         {
             return Ok(await _accountService.DeleteUser(email));
         }
-        
+
         [HttpPost("Registration")]
         public async Task<IActionResult> Register(AccountDto input)
         {
             return Ok(await _accountService.Register(input));
         }
-        
+
         [HttpPost("Login")]
         public async Task<IActionResult> LogIn(string email, string password)
         {
             return Ok(await _accountService.LogIn(email, password));
         }
-
-        //[HttpPost("Test")]
-        //public async Task<IActionResult> UplaodImage(IFormFile file)
-        //{
-        //    var result = await _cloud.UploadImage(file);
-        //    return Ok(result);
-        //}
-        //[HttpPost("Test2")]
-        //public async Task<IActionResult> UplaodImages(List<IFormFile> files)
-        //{
-        //    var result = await _cloud.UploadImages(files);
-        //    return Ok(result);
-        //}
-
-
     }
 }

@@ -1,9 +1,9 @@
-﻿using CatenaccioStore.Application.Infrastruture.Errors;
-using CatenaccioStore.Application.Infrastruture.JWT;
+﻿using CatenaccioStore.Application.Infrastruture.JWT;
 using CatenaccioStore.Application.Services.Accounts.Abstraction;
 using CatenaccioStore.Application.Services.Accounts.constant;
 using CatenaccioStore.Application.Services.Accounts.DTOs;
 using CatenaccioStore.Domain.Entities.Users;
+using CatenaccioStore.Infrastructure.Errors;
 using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -52,7 +52,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 var createdUser = await _userManager.CreateAsync(currentUser, account.Password);
                 if (createdUser.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(currentUser, Role.User.ToString());
+                    await _userManager.AddToRoleAsync(currentUser, UserRoles.User.ToString());
                     return true;
                 }
             }
@@ -88,7 +88,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 var createdUser = await _userManager.CreateAsync(currentUser, account.Password);
                 if (createdUser.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(currentUser, Role.Moderator.ToString());
+                    await _userManager.AddToRoleAsync(currentUser, UserRoles.Moderator.ToString());
                     return true;
                 }
             }
@@ -114,7 +114,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 var createdUser = await _userManager.CreateAsync(currentUser, account.Password);
                 if (createdUser.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(currentUser, Role.Admin.ToString());
+                    await _userManager.AddToRoleAsync(currentUser, UserRoles.Admin.ToString());
                     return true;
                 }
             }
@@ -152,7 +152,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
             }
             throw new NotFoundException("User With This Email Doesn't exists");
         }
-        public async Task<bool> CreateRoles(Role role)
+        public async Task<bool> CreateRoles(UserRoles role)
         {
             var roleExists = await _roleManager.FindByNameAsync(role.ToString());
             if (roleExists == null)
