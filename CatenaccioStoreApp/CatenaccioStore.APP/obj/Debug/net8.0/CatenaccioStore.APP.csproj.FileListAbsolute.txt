@@ -11,6 +11,8 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\Catenacci
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.AssemblyInfo.cs
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.csproj.CoreCompileInputs.cache
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.MvcApplicationPartsAssemblyInfo.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.RazorAssemblyInfo.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.RazorAssemblyInfo.cs
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.sourcelink.json
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\staticwebassets.build.json
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\staticwebassets.development.json
@@ -19,8 +21,7 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\staticweb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CatenaccioStore.APP.props
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CatenaccioStore.APP.props
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\staticwebassets.pack.json
-D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\scopedcss\bundle\CatenaccioStore.APP.styles.css
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\scopedcss\projectbundle\CatenaccioStore.APP.bundle.scp.css
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.dll
@@ -28,3 +29,5 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\refint\Ca
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.pdb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.genruntimeconfig.cache
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\ref\CatenaccioStore.APP.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\bin\Debug\net8.0\package-lock.json
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\bin\Debug\net8.0\package.json
