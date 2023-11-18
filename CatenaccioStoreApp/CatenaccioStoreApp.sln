@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.API", "CatenaccioStore.API\CatenaccioStore.API.csproj", "{27F93CD3-4781-47A5-9FE1-1D4203577C13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.API", "CatenaccioStore.API\CatenaccioStore.API.csproj", "{27F93CD3-4781-47A5-9FE1-1D4203577C13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.Domain", "CatenaccioStore.Domain\CatenaccioStore.Domain.csproj", "{9FA9FBBA-7C56-485B-900A-38F296287DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Domain", "CatenaccioStore.Domain\CatenaccioStore.Domain.csproj", "{9FA9FBBA-7C56-485B-900A-38F296287DBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC291BAF-7E51-42FE-859F-CF1DF38E8A5D}"
 EndProject
@@ -13,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FD32ABF2-C728-4797-9A5F-3624793D042A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.Application", "CatenaccioStore.Application\CatenaccioStore.Application.csproj", "{88F82C09-FB0B-40A0-B45E-C0BCC028A75D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Application", "CatenaccioStore.Application\CatenaccioStore.Application.csproj", "{88F82C09-FB0B-40A0-B45E-C0BCC028A75D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8791AA66-D150-4CA6-85F3-152336B2C0A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.Infrastructure", "CatenaccioStore.Infrastructure\CatenaccioStore.Infrastructure.csproj", "{A796A81F-67A3-4F44-9E0B-349DCD8E151B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Infrastructure", "CatenaccioStore.Infrastructure\CatenaccioStore.Infrastructure.csproj", "{A796A81F-67A3-4F44-9E0B-349DCD8E151B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.Persistence", "CatenaccioStore.Persistence\CatenaccioStore.Persistence.csproj", "{7B403BCD-B4E1-464A-B76E-92F782148A0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Persistence", "CatenaccioStore.Persistence\CatenaccioStore.Persistence.csproj", "{7B403BCD-B4E1-464A-B76E-92F782148A0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.APP", "CatenaccioStore.APP\CatenaccioStore.APP.csproj", "{FE1AA989-F59B-4A6E-9F8F-8746982699C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1AA989-F59B-4A6E-9F8F-8746982699C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1AA989-F59B-4A6E-9F8F-8746982699C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1AA989-F59B-4A6E-9F8F-8746982699C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1AA989-F59B-4A6E-9F8F-8746982699C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{8791AA66-D150-4CA6-85F3-152336B2C0A5} = {CC291BAF-7E51-42FE-859F-CF1DF38E8A5D}
 		{A796A81F-67A3-4F44-9E0B-349DCD8E151B} = {8791AA66-D150-4CA6-85F3-152336B2C0A5}
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E} = {8791AA66-D150-4CA6-85F3-152336B2C0A5}
+		{FE1AA989-F59B-4A6E-9F8F-8746982699C9} = {EFD872FD-A931-4BDE-8ED4-31D95012D830}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD11AAA2-C38D-4A8F-8A80-D42F51C5062B}
