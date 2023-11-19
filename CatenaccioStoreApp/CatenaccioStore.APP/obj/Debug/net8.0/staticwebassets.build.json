@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n8kRS9uLH0SARCBfJiZQeUh7KwzDJMA6l+JfGysy3Js=",
+  "Hash": "onlkTszkVbc7DTcfbvwu9hC40UDEcY8FBfzFhiWf1fM=",
   "Source": "CatenaccioStore.APP",
   "BasePath": "_content/CatenaccioStore.APP",
   "Mode": "Default",
@@ -72,25 +72,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
-    },
-    {
-      "Identity": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\css\\styles.css",
-      "SourceId": "CatenaccioStore.APP",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\",
-      "BasePath": "_content/CatenaccioStore.APP",
-      "RelativePath": "css/styles.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
       "Identity": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\favicon.ico",

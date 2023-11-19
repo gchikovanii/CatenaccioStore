@@ -9,10 +9,6 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\css\\styles.css",
-      "PackagePath": "staticwebassets\\css\\styles.css"
-    },
-    {
       "Id": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
