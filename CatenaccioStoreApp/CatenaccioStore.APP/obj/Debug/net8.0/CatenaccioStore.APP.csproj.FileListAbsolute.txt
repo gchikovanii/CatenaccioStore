@@ -31,3 +31,4 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\refint\Ca
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.pdb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.genruntimeconfig.cache
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\ref\CatenaccioStore.APP.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\bin\Debug\net8.0\libman.json
