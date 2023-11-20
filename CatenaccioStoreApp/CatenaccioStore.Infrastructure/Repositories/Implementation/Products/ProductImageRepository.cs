@@ -1,5 +1,6 @@
 ﻿using CatenaccioStore.Domain.Entities.Products;
 using CatenaccioStore.Infrastructure.Errors;
+using CatenaccioStore.Infrastructure.Localizations;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction.Products;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var result = await _productImageRepository.GetQuery(i => i.Id == id).SingleOrDefaultAsync();
             if (result == null)
-                throw new NotFoundException("Not Found");
+                throw new NotFoundException(ErrorMessages.NotFound);
             return result;
         }
         public async Task<List<ProductImage>> GetAll()
@@ -32,7 +33,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var entity = await _productImageRepository.Table.SingleOrDefaultAsync(i => i.Id == imageId);
             if (entity == null)
-                throw new NotFoundException("Image doesn't exists");
+                throw new NotFoundException(ErrorMessages.NotFound);
             await _productImageRepository.RemoveAsync(cancellationToken, entity.Id);
         }
 

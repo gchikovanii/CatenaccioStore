@@ -41,11 +41,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseSerilogRequestLogging();
-app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseRequestCulture();
+app.UseGlobalExceptionHandler();
 app.MapControllers();
 
 #region APP RUN

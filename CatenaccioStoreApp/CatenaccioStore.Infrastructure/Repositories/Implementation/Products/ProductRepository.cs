@@ -1,5 +1,6 @@
 ﻿using CatenaccioStore.Domain.Entities.Products;
 using CatenaccioStore.Infrastructure.Errors;
+using CatenaccioStore.Infrastructure.Localizations;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction.Products;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var result = await _productRepository.GetQuery(i => i.ProductName.ToLower() == name.ToLower()).SingleOrDefaultAsync(cancellationToken);
             if (result == null)
-                throw new NotFoundException("Product with this name doesn't exists");
+                throw new NotFoundException(ErrorMessages.NotFound);
             return result;
         }
         public async Task<List<Product>> GetAllProductsPaginated(CancellationToken cancellationToken, int pageIndex, int pageSize)
@@ -74,7 +75,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var productExists = await _productRepository.GetQuery(i => i.ProductName == product.ProductName).SingleOrDefaultAsync(cancellationToken);
             if (productExists != null)
-                throw new AlreadyExists("Product with this name already exists!");
+                throw new AlreadyExists(ErrorMessages.AlreadyExists);
             await _productRepository.AddAsync(product, cancellationToken);
         }
 
@@ -82,7 +83,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var entity = await _productRepository.Table.FirstOrDefaultAsync(i => i.ProductName.ToLower() == product.ProductName.ToLower());
             if (entity == null)
-                throw new NotFoundException("Product with this name not found!");
+                throw new NotFoundException(ErrorMessages.NotFound);
             if(product.ProductName != null) 
                 entity.ProductName = product.ProductName;
             if (product.Price != 0 )
@@ -95,7 +96,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var entity = await _productRepository.Table.SingleOrDefaultAsync(i => i.ProductName.ToLower() == name.ToLower());
             if (entity == null)
-                throw new NotFoundException("Product with this name not found!");
+                throw new NotFoundException(ErrorMessages.NotFound);
             await _productRepository.RemoveAsync(cancellationToken, entity.Id);
         }
     }

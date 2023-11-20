@@ -1,5 +1,6 @@
 ﻿using CatenaccioStore.Domain.Entities.Products;
 using CatenaccioStore.Infrastructure.Errors;
+using CatenaccioStore.Infrastructure.Localizations;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction.Products;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var entity = await _repository.Table.FirstOrDefaultAsync(i => i.Name.ToLower() == categoryName.ToLower());
             if (entity == null)
-                throw new NotFoundException("Category doesn't exists");
+                throw new NotFoundException(ErrorMessages.NotFound);
             entity.Name = newName;
             _repository.Update(entity, cancellationToken);
         }
@@ -35,7 +36,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             var entity = await _repository.Table.SingleOrDefaultAsync(i => i.Name.ToLower() == categoryName.ToLower());
             if (entity == null)
-                throw new NotFoundException("Category doesn't exists");
+                throw new NotFoundException(ErrorMessages.NotFound);
             await _repository.RemoveAsync(cancellationToken, entity.Id);
         }
 

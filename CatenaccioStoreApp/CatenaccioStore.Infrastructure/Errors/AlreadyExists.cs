@@ -1,8 +1,10 @@
-﻿namespace CatenaccioStore.Infrastructure.Errors
+﻿using CatenaccioStore.Infrastructure.Localizations;
+
+namespace CatenaccioStore.Infrastructure.Errors
 {
     public class AlreadyExists : Exception
     {
-        public string Code = "Already exists";
+        public string Code = ErrorMessages.AlreadyExistsCode;
         public AlreadyExists(string message) : base(message)
         {
         }
