@@ -11,6 +11,8 @@
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/CatenaccioStore.APP.styles.css" asp-append-version="true" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.2/components/logins/login-8/assets/css/login-8.css" />
+
 </head>
 <body>
     @Html.Partial("~/Views/Navbar/Navbar.cshtml")
@@ -20,40 +22,11 @@
         </main>
     </div>
     @Html.Partial("~/Views/Footer/Footer.cshtml")
-    @* <footer class="text-center text-white" style="background-color: rgb(31,39,88);">
-        <div class="container p-4 pb-0">
-            <section class="">
-                <form action="">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-auto">
-                            <p class="pt-2">
-                                <strong>@Localizer["Subscribe"]Subscribe for news, Enter Email: </strong>
-                            </p>
-                        </div>
-                        <div class="col-md-5 col-12">
-                            <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example29" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <button type="submit" class="btn btn-outline-light mb-4">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </section>
-        </div>
-        <div class="text-center p-3" style="background-color: rgb(31,39,88);">
-            © 2023 Copyright:
-            <a class="text-white" href="#">  Catenaccio</a>
-        </div>
-    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

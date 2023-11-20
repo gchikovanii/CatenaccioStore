@@ -60,8 +60,14 @@
                     <li class="nav-item">
                         <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-cart-shopping me-1"></i> @Localizer["Cart"]</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase" href="#"><i class="fa-solid fa-circle-user me-1"></i> @Localizer["Account"]</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-circle-user me-1"></i> @Localizer["Account"]
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Login"><i class="fa-solid fa-right-to-bracket me-1"></i> @Localizer["sign"]</a>
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Register"><i class="fa-solid  fa-user-plus me-1"></i> @Localizer["register"]</a>
+                        </div>
                     </li>
                 </ul>
             </div>

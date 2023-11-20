@@ -141,10 +141,16 @@
   <data name="Products" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="register" xml:space="preserve">
+    <value>Registration</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="Shipping" xml:space="preserve">
     <value>Shipping</value>
+  </data>
+  <data name="sign" xml:space="preserve">
+    <value>Sign In</value>
   </data>
 </root>

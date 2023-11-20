@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<div class="container-fluid vh-100" style="margin-top:20px">
+    <div>
+        <div class="rounded d-flex justify-content-center">
+            <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+                <div class="text-center">
+                    <h3 class="text-primary">@Localizer["create"]</h3>
+                </div>
+                <div class="p-4">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-person-plus-fill text-white"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="@Localizer["fname"]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-envelope text-white"></i>
+                            </span>
+                            <input type="email" class="form-control" placeholder="@Localizer["lname"]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-envelope text-white"></i>
+                            </span>
+                            <input type="number" class="form-control" placeholder="@Localizer["phone"]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-envelope text-white"></i>
+                            </span>
+                            <input type="date" class="form-control" placeholder="@Localizer["dob"]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-envelope text-white"></i>
+                            </span>
+                            <input type="email" class="form-control" placeholder="@Localizer["email"]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-key-fill text-white"></i>
+                            </span>
+                            <input type="password" class="form-control" placeholder="@Localizer["password"]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary">
+                                <i class="bi bi-key-fill text-white"></i>
+                            </span>
+                            <input type="password" class="form-control" placeholder="@Localizer["repassword"]">
+                        </div>
+                        <div class="d-grid col-12 mx-auto">
+                            <button class="btn btn-primary" type="button"><span></span> @Localizer["signup"]</button>
+                        </div>
+                        <p class="text-center mt-3">
+                            @Localizer["already"]
+                            <a asp-action="Login" asp-controller="Account"><span class="text-primary">@Localizer["signin"]</span></a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

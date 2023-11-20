@@ -5,8 +5,8 @@ namespace CatenaccioStore.Application.Services.Accounts.Abstraction
 {
     public interface IAccountService
     {
-        Task<string> LogIn(string email, string password);
-        Task<bool> Register(AccountDto account);
+        Task<string> LogIn(LoginDto login);
+        Task<bool> Register(RegisterDto account);
         Task<AccountDto> GetUserByEmail(string email);
         Task<List<AccountDto>> GetAll();
         Task<bool> CreateModerator(AccountDto account);
@@ -14,5 +14,6 @@ namespace CatenaccioStore.Application.Services.Accounts.Abstraction
         Task<bool> UpdateUserName(string email, string userName);
         Task<bool> DeleteUser(string email);
         Task<bool> CreateRoles(UserRoles role);
+        Task Logout();
     }
 }

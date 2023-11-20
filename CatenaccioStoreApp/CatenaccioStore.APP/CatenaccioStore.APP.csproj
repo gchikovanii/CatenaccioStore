@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CatenaccioStore.Application\CatenaccioStore.Application.csproj" />
+  </ItemGroup>
+
 </Project>

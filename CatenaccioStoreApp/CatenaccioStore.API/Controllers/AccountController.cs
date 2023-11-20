@@ -2,7 +2,6 @@
 using CatenaccioStore.Application.Services.Accounts.Abstraction;
 using CatenaccioStore.Application.Services.Accounts.constant;
 using CatenaccioStore.Application.Services.Accounts.DTOs;
-using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -117,7 +116,7 @@ namespace CatenaccioStore.API.Controllers
         }
 
         [HttpPost("Registration")]
-        public async Task<IActionResult> Register(AccountDto input)
+        public async Task<IActionResult> Register(RegisterDto input)
         {
             try
             {
@@ -131,11 +130,11 @@ namespace CatenaccioStore.API.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> LogIn(string email, string password)
+        public async Task<IActionResult> LogIn(LoginDto input)
         {
             try
             {
-                return Ok(await _accountService.LogIn(email, password));
+                return Ok(await _accountService.LogIn(input));
             }
             catch (Exception ex)
             {

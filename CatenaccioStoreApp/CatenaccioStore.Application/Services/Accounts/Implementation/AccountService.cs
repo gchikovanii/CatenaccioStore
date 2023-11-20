@@ -4,6 +4,7 @@ using CatenaccioStore.Application.Services.Accounts.constant;
 using CatenaccioStore.Application.Services.Accounts.DTOs;
 using CatenaccioStore.Domain.Entities.Users;
 using CatenaccioStore.Infrastructure.Errors;
+using CatenaccioStore.Infrastructure.Localizations;
 using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -24,16 +25,16 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
             _jwtAuthenticationManager = jwtAuthenticationManager;
             _roleManager = roleManager;
         }
-        public async Task<string> LogIn(string email, string password)
+        public async Task<string> LogIn(LoginDto login)
         {
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByEmailAsync(login.Email);
             if (user == null)
-                throw new NotFoundException("User Not Found");
-            var result = await _signInManager.PasswordSignInAsync(user, password, true, false);
+                throw new NotFoundException(ErrorMessages.NotFound);
+            var result = await _signInManager.PasswordSignInAsync(user, login.Password, true, false);
             var roles = await _userManager.GetRolesAsync(user);
-            return _jwtAuthenticationManager.Authenticate(result.Succeeded, email, roles.ToList());
+            return _jwtAuthenticationManager.Authenticate(result.Succeeded, login.Email, roles.ToList());
         }
-        public async Task<bool> Register(AccountDto account)
+        public async Task<bool> Register(RegisterDto account)
         {
             var userExists = await _userManager.FindByEmailAsync(account.Email);
             var checkUserName = await _userManager.FindByNameAsync(account.UserName);
@@ -42,7 +43,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
 
                 if (checkUserName != null)
                 {
-                    throw new AlreadyExists("User Name isn't avaliable!");
+                    throw new AlreadyExists(ErrorMessages.AlreadyExists);
                 }
                 var currentUser = new AppUser()
                 {
@@ -60,7 +61,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                     return true;
                 }
             }
-            throw new AlreadyExists("Email already is registered!");
+            throw new AlreadyExists(ErrorMessages.AlreadyExists);
         }
         public async Task<AccountDto> GetUserByEmail(string email)
         {
@@ -81,7 +82,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
 
                 if (checkUserName != null)
                 {
-                    throw new AlreadyExists("Already Exists with this username!");
+                    throw new AlreadyExists(ErrorMessages.AlreadyExists);
                 }
                 var currentUser = new AppUser()
                 {
@@ -99,7 +100,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                     return true;
                 }
             }
-            throw new AlreadyExists("Email Already Exists!");
+            throw new AlreadyExists(ErrorMessages.AlreadyExists);
         }
         public async Task<bool> CreateAdmin(AccountDto account)
         {
@@ -110,7 +111,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
 
                 if (checkUserName != null)
                 {
-                    throw new AlreadyExists("Already Exists with this username!");
+                    throw new AlreadyExists(ErrorMessages.AlreadyExists);
                 }
                 var currentUser = new AppUser()
                 {
@@ -128,7 +129,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                     return true;
                 }
             }
-            throw new AlreadyExists("Already Exists with this email!");
+            throw new AlreadyExists(ErrorMessages.AlreadyExists);
         }
         public async Task<bool> UpdateUserName(string email, string userName)
         {
@@ -138,7 +139,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 var userNameExists = await _userManager.FindByNameAsync(userName);
                 if (userNameExists != null)
                 {
-                    throw new AlreadyExists("Already Exists with this username!");
+                    throw new AlreadyExists(ErrorMessages.AlreadyExists);
                 }
                 else
                 {
@@ -158,7 +159,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 var userNameExists = await _userManager.FindByNameAsync(account.Email);
                 if (userNameExists != null)
                 {
-                    throw new AlreadyExists("Already Exists with this username!");
+                    throw new AlreadyExists(ErrorMessages.AlreadyExists);
                 }
                 else
                 {
@@ -187,7 +188,7 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                     return true;
 
             }
-            throw new NotFoundException("User With This Email Doesn't exists");
+            throw new NotFoundException(ErrorMessages.NotFound);
         }
         public async Task<bool> CreateRoles(UserRoles role)
         {
@@ -202,6 +203,9 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
             }
             return false;
         }
-
+        public async Task Logout()
+        {
+            await _signInManager.SignOutAsync().ConfigureAwait(false);
+        }
     }
 }

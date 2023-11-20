@@ -141,10 +141,16 @@
   <data name="Products" xml:space="preserve">
     <value>პროდუქტები</value>
   </data>
+  <data name="register" xml:space="preserve">
+    <value>რეგისტრაცია</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>ძებნა</value>
   </data>
   <data name="Shipping" xml:space="preserve">
     <value>ტრანსპორტირება</value>
+  </data>
+  <data name="sign" xml:space="preserve">
+    <value>შესვლა</value>
   </data>
 </root>

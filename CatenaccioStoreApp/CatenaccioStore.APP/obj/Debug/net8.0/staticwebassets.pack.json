@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\CatenaccioStore.APP.bundle.scp.css"
     },
     {
+      "Id": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\assets\\img\\head.png",
+      "PackagePath": "staticwebassets\\assets\\img\\head.png"
+    },
+    {
+      "Id": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\assets\\img\\kvara.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\kvara.jpg"
+    },
+    {
       "Id": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

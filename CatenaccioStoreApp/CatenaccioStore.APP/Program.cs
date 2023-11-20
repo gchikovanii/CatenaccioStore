@@ -1,3 +1,4 @@
+using CatenaccioStore.Application.Infrastruture.Extensions;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
