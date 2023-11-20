@@ -7,7 +7,6 @@ using CatenaccioStore.Infrastructure.Errors;
 using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 
 namespace CatenaccioStore.Application.Services.Accounts.Implementation
 {
@@ -28,6 +27,8 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
         public async Task<string> LogIn(string email, string password)
         {
             var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                throw new NotFoundException("User Not Found");
             var result = await _signInManager.PasswordSignInAsync(user, password, true, false);
             var roles = await _userManager.GetRolesAsync(user);
             return _jwtAuthenticationManager.Authenticate(result.Succeeded, email, roles.ToList());
@@ -45,6 +46,9 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 }
                 var currentUser = new AppUser()
                 {
+                    FirstName = account.FirstName,
+                    LastName = account.LastName,
+                    DOB = account.DOB,
                     UserName = account.UserName,
                     Email = account.Email,
                     PhoneNumber = account.PhoneNumber
@@ -81,6 +85,9 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 }
                 var currentUser = new AppUser()
                 {
+                    FirstName = account.FirstName,
+                    LastName = account.LastName,
+                    DOB = account.DOB,
                     UserName = account.UserName,
                     Email = account.Email,
                     PhoneNumber = account.PhoneNumber
@@ -107,6 +114,9 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 }
                 var currentUser = new AppUser()
                 {
+                    FirstName = account.FirstName,
+                    LastName = account.LastName,
+                    DOB = account.DOB,
                     UserName = account.UserName,
                     Email = account.Email,
                     PhoneNumber = account.PhoneNumber
@@ -133,6 +143,33 @@ namespace CatenaccioStore.Application.Services.Accounts.Implementation
                 else
                 {
                     userExists.UserName = userName;
+                    var result = await _userManager.UpdateAsync(userExists);
+                    if (result.Succeeded)
+                        return true;
+                }
+            }
+            return false;
+        }
+        public async Task<bool> UpdateUser(AccountDto account)
+        {
+            var userExists = await _userManager.FindByEmailAsync(account.Email);
+            if (userExists != null)
+            {
+                var userNameExists = await _userManager.FindByNameAsync(account.Email);
+                if (userNameExists != null)
+                {
+                    throw new AlreadyExists("Already Exists with this username!");
+                }
+                else
+                {
+                    if(account.UserName != null)
+                        userExists.UserName = account.UserName;
+                    if (account.FirstName != null)
+                        userExists.FirstName = account.FirstName;
+                    if (account.LastName != null)
+                        userExists.LastName = account.LastName;
+                    if (userExists.DOB != account.DOB && userExists.DOB != default)
+                        userExists.DOB = account.DOB;
                     var result = await _userManager.UpdateAsync(userExists);
                     if (result.Succeeded)
                         return true;

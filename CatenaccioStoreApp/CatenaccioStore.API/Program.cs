@@ -16,7 +16,9 @@ builder.Services.AddServices();
 builder.Services.AddCustomSwagger();
 builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddCloudinary(builder.Configuration);
-
+#region AddFluentValidation
+builder.Services.AddFluentValidation();
+#endregion
 #region Serilog
 builder.Host.UseSerilog((context, conf) =>
 conf.ReadFrom.Configuration(context.Configuration));

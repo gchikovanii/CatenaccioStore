@@ -45,7 +45,7 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.Admin)]
+        //[Authorize(Roles = UserType.Admin)]
         [HttpPost("Roles")]
         public async Task<IActionResult> CreateRoles(UserRoles role)
         {
@@ -73,7 +73,7 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.Admin)]
+        //[Authorize(Roles = UserType.Admin)]
         [HttpPost("Admin")]
         public async Task<IActionResult> AddAdmin(AccountDto input)
         {

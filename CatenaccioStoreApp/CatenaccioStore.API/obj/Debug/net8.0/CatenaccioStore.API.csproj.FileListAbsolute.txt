@@ -158,3 +158,6 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.S
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.Sinks.File.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\FluentValidation.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

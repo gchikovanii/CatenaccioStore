@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "LggE3kK4tqTQxTzqH/k6TX4jUYvZ9J5bMkClE0nDo/n2CtDGi/pDQIVnNkB84UPpkGX7qceAezIOTW30KzTVyA==",
+  "dgSpecHash": "AC2mtTt0QX8FVc3NuiDUzSxyt+aWIYn9KAYTFfyRWVxeHhvEpKxYYHgYbcKtZb1xN4X9crToEAVr3JyZgLnlFw==",
   "success": true,
   "projectFilePath": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.API\\CatenaccioStore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gchik\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\cloudinarydotnet\\1.23.0\\cloudinarydotnet.1.23.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
     "C:\\Users\\gchik\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
