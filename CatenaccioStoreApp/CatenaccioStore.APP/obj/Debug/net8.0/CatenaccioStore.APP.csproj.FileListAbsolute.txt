@@ -32,3 +32,13 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\Catenacci
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.genruntimeconfig.cache
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\ref\CatenaccioStore.APP.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\bin\Debug\net8.0\libman.json
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\bin\Debug\net8.0\en-US\CatenaccioStore.APP.resources.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\bin\Debug\net8.0\ka-GE\CatenaccioStore.APP.resources.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Home.Index.en-US.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Navbar.Navbar.en-US.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Navbar.Navbar.ka-GE.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.csproj.GenerateResource.cache
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\en-US\CatenaccioStore.APP.resources.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\ka-GE\CatenaccioStore.APP.resources.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Footer.Footer.en-US.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Footer.Footer.ka-GE.resources

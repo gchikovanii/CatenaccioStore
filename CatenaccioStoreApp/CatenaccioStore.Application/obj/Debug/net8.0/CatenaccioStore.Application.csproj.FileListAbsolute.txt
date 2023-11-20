@@ -18,3 +18,4 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\C
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\CatenaccioStore.Persistence.pdb
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\CatenaccioStore.Application.csproj.AssemblyReference.cache
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\obj\Debug\net8.0\CatenaccioStore.Application.csproj.CopyComplete
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.Application\bin\Debug\net8.0\ka-GE\CatenaccioStore.Infrastructure.resources.dll

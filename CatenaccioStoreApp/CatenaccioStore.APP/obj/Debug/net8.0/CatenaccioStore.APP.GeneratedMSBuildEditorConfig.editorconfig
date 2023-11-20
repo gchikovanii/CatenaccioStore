@@ -18,12 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/OnlineStore/CatenaccioStoreApp/CatenaccioStore.APP/Views/Footer/Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEZvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/OnlineStore/CatenaccioStoreApp/CatenaccioStore.APP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/OnlineStore/CatenaccioStoreApp/CatenaccioStore.APP/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OnlineStore/CatenaccioStoreApp/CatenaccioStore.APP/Views/Navbar/Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmF2YmFyXE5hdmJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/OnlineStore/CatenaccioStoreApp/CatenaccioStore.APP/Views/Shared/Error.cshtml]

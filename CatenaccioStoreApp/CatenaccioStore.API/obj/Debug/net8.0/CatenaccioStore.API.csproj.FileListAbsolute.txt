@@ -161,3 +161,4 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\Serilog.S
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\FluentValidation.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.API\bin\Debug\net8.0\ka-GE\CatenaccioStore.Infrastructure.resources.dll

@@ -12,6 +12,11 @@
         },
         "runtime": {
           "CatenaccioStore.Infrastructure.dll": {}
+        },
+        "resources": {
+          "ka-GE/CatenaccioStore.Infrastructure.resources.dll": {
+            "locale": "ka-GE"
+          }
         }
       },
       "Azure.Core/1.25.0": {

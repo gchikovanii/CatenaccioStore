@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Localizations\ErrorMessages.ka-GE.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Localizations\ErrorMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

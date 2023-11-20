@@ -1539,6 +1539,11 @@
         },
         "runtime": {
           "CatenaccioStore.Infrastructure.dll": {}
+        },
+        "resources": {
+          "ka-GE/CatenaccioStore.Infrastructure.resources.dll": {
+            "locale": "ka-GE"
+          }
         }
       },
       "CatenaccioStore.Persistence/1.0.0": {

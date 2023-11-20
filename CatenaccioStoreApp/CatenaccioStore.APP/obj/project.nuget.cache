@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "c/RUeNaN9Jy2DP0otujzxc1PNg1MZO9rXCm7154+1CeffKrp4GpS4LCfPL4cmTu5EtJo7mxv+jTWEZA8zNBx0g==",
+  "dgSpecHash": "Jhx7pQWrD4K72VSgovzmRmkGl11aFVyWAospkYDPvGAwGnbS7yljQum1GYdT2b3M4+kSgsou3Nj+lzNr9oroYQ==",
   "success": true,
   "projectFilePath": "D:\\OnlineStore\\CatenaccioStoreApp\\CatenaccioStore.APP\\CatenaccioStore.APP.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.localization\\8.0.0\\microsoft.extensions.localization.8.0.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\8.0.0\\microsoft.extensions.localization.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\gchik\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

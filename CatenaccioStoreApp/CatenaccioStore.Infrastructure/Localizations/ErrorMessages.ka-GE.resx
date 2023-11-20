@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AlreadyExists" xml:space="preserve">
-    <value>უკვე არსებობს</value>
+    <value>ჩანაწერი უკვე არსებობს</value>
   </data>
   <data name="AlreadyExistsCode" xml:space="preserve">
     <value>უკვე არსებობს</value>
   </data>
   <data name="NotFound" xml:space="preserve">
-    <value>ვერ მოიძებნა</value>
+    <value>ჩანაწერი ვერ მოიძებნა</value>
   </data>
   <data name="NotFoundCode" xml:space="preserve">
     <value>ვერ მოიძებნა</value>
