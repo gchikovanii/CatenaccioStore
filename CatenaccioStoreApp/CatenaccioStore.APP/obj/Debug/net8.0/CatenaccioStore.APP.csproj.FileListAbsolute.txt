@@ -105,3 +105,7 @@ D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\Catenacci
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Account.Login.ka-GE.resources
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Account.Register.en-US.resources
 D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Account.Register.ka-GE.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Contact.Contact.en-US.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.Contact.Contact.ka-GE.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.About.About.en-US.resources
+D:\OnlineStore\CatenaccioStoreApp\CatenaccioStore.APP\obj\Debug\net8.0\CatenaccioStore.APP.Resources.Views.About.About.ka-GE.resources

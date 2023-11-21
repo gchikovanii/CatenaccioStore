@@ -14,4 +14,8 @@
     <ProjectReference Include="..\CatenaccioStore.Application\CatenaccioStore.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Views\Product\" />
+  </ItemGroup>
+
 </Project>

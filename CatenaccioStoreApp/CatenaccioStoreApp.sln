@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Persistence", "CatenaccioStore.Persistence\CatenaccioStore.Persistence.csproj", "{7B403BCD-B4E1-464A-B76E-92F782148A0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatenaccioStore.APP", "CatenaccioStore.APP\CatenaccioStore.APP.csproj", "{BC55003E-8D64-4B17-BB8A-5F288A399885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.APP", "CatenaccioStore.APP\CatenaccioStore.APP.csproj", "{BC55003E-8D64-4B17-BB8A-5F288A399885}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

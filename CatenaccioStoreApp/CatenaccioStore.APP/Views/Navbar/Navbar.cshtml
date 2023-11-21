@@ -44,16 +44,16 @@
                 </div>
                 <ul class="navbar-nav ms-auto ">
                     <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">@Localizer["Offers"]</a>
+                        <a asp-controller="Product" asp-action="Offers" class="nav-link mx-2 text-uppercase active " aria-current="page">@Localizer["Offers"]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase" href="#">@Localizer["Products"]</a>
+                        <a asp-controller="Product" asp-action="Products" class="nav-link mx-2 text-uppercase">@Localizer["Products"]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase" href="#">@Localizer["About"]</a>
+                        <a asp-controller="About" asp-action="About" class="nav-link mx-2 text-uppercase">@Localizer["About"]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mx-2 text-uppercase" href="#">@Localizer["Contact"]</a>
+                        <a asp-controller="Contact" asp-action="Contact" class="nav-link mx-2 text-uppercase">@Localizer["Contact"]</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto ">
