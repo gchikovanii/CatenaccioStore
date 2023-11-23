@@ -41,7 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
-app.UseRequestCulture();
+app.UseCulture();
 app.UseGlobalExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();

@@ -4,9 +4,9 @@ namespace CatenaccioStore.API.Infrastructure.Extensions
 {
     public static class CultureMiddlewareExtension
     {
-        public static IApplicationBuilder UseRequestCulture(this IApplicationBuilder app) 
+        public static IApplicationBuilder UseCulture(this IApplicationBuilder builder)
         {
-            return app.UseMiddleware<CultureMiddleware>();
+            return builder.UseMiddleware<CultureConfigMiddleware>();
         }
     }
 }

@@ -2,10 +2,10 @@
 
 namespace CatenaccioStore.API.Infrastructure.Middlewares
 {
-    public class CultureMiddleware
+    public class CultureConfigMiddleware
     {
         private readonly RequestDelegate _next;
-        public CultureMiddleware(RequestDelegate next)
+        public CultureConfigMiddleware(RequestDelegate next)
         {
             _next = next;
         }
@@ -20,6 +20,5 @@ namespace CatenaccioStore.API.Infrastructure.Middlewares
             CultureInfo.CurrentUICulture = culture;
             await _next(context).ConfigureAwait(false);
         }
-
     }
 }
