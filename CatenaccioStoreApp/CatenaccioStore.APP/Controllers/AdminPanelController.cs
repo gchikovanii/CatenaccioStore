@@ -7,7 +7,6 @@ namespace CatenaccioStore.APP.Controllers
     {
         public AdminPanelController()
         {
-            
         }
         public IActionResult Index()
         {

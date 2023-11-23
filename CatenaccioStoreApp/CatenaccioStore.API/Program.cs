@@ -1,5 +1,4 @@
 using CatenaccioStore.API.Infrastructure.Extensions;
-using CatenaccioStore.API.Infrastructure.Middlewares;
 using CatenaccioStore.Application.Infrastruture.Extensions;
 using CatenaccioStore.Domain.Entities.Users;
 using CatenaccioStore.Persistence.DataContext;
@@ -42,10 +41,10 @@ if (app.Environment.IsDevelopment())
 }
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
 app.UseRequestCulture();
 app.UseGlobalExceptionHandler();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 #region APP RUN
