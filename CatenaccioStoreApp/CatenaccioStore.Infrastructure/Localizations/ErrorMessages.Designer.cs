@@ -79,6 +79,15 @@ namespace CatenaccioStore.Infrastructure.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File Not Found.
+        /// </summary>
+        public static string FileNotFound {
+            get {
+                return ResourceManager.GetString("FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item was not found.
         /// </summary>
         public static string NotFound {
