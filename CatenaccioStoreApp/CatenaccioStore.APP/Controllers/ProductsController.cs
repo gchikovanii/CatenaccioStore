@@ -1,7 +1,9 @@
 ﻿using CatenaccioStore.APP.Data.ViewModels;
 using CatenaccioStore.APP.Views.Product;
 using CatenaccioStore.Application.Services.Products.Abstraction;
+using CatenaccioStore.Application.Services.Products.DTOs;
 using CatenaccioStore.Domain.Entities.Products;
+using Mapster;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatenaccioStore.APP.Controllers
@@ -18,6 +20,21 @@ namespace CatenaccioStore.APP.Controllers
         {
             var data = await _productService.GetAllProducts(token);
             return View();
+        }
+        public async Task<IActionResult> AdminPanelProduct(CancellationToken token)
+        {
+            var products = await _productService.GetAllProducts(token);
+            return View(products);
+        }
+        public async Task<IActionResult> Search(string searchString,CancellationToken token)
+        {
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                var products = await _productService.SearchProducts(token, searchString);
+                return View("AdminPanelProduct",products);
+            }
+            var all = await _productService.GetAllProducts(token);
+            return View("AdminPanelProduct", all);
         }
 
         public IActionResult ProductDetail()

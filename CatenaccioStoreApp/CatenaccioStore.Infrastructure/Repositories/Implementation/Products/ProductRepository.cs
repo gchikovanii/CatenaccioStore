@@ -68,7 +68,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         }
         public async Task<List<Product>> SearchProducts(CancellationToken cancellationToken, string filter)
         {
-            var products = await _productRepository.GetQuery().Include(i => i.Category).Include(i => i.Images).Where(i => i.ProductName.ToLower().Contains(filter.ToLower())).ToListAsync();
+            var products = await _productRepository.GetQuery().Include(i => i.Category).Include(i => i.Images).Where(i => i.ProductName.ToLower().StartsWith(filter.ToLower())).ToListAsync();
             return products;
         }
         public async Task CreateAsync(CancellationToken cancellationToken, Product product)
