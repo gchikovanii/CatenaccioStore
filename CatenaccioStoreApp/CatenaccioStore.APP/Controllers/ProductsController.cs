@@ -1,9 +1,7 @@
 ﻿using CatenaccioStore.APP.Data.ViewModels;
+using CatenaccioStore.APP.Models;
 using CatenaccioStore.APP.Views.Product;
 using CatenaccioStore.Application.Services.Products.Abstraction;
-using CatenaccioStore.Application.Services.Products.DTOs;
-using CatenaccioStore.Domain.Entities.Products;
-using Mapster;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatenaccioStore.APP.Controllers
@@ -16,25 +14,35 @@ namespace CatenaccioStore.APP.Controllers
             _productService = productService;
         }
 
-        public async Task<IActionResult> Index(CancellationToken token)
+        public async Task<IActionResult> Index()
         {
-            var data = await _productService.GetAllProducts(token);
             return View();
         }
-        public async Task<IActionResult> AdminPanelProduct(CancellationToken token)
+        public async Task<IActionResult> AdminPanelProduct(CancellationToken token, int pageIndex = 1, int pageSize = 10)
         {
-            var products = await _productService.GetAllProducts(token);
-            return View(products);
+            var paginatedData = await _productService.GetAllProductsPaginated(token, pageIndex, pageSize);
+            var totalCount = await _productService.GetAllProductsCount(token);
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalCount = totalCount;
+            return View(paginatedData);
         }
-        public async Task<IActionResult> Search(string searchString,CancellationToken token)
+        public async Task<IActionResult> Search(CancellationToken token,string searchString, int pageIndex = 1, int pageSize = 10)
         {
             if (!string.IsNullOrEmpty(searchString))
             {
                 var products = await _productService.SearchProducts(token, searchString);
-                return View("AdminPanelProduct",products);
+                ViewBag.PageIndex = pageIndex; 
+                ViewBag.PageSize = pageSize;   
+                ViewBag.TotalCount = products.Count; 
+                return View("AdminPanelProduct", products);
             }
-            var all = await _productService.GetAllProducts(token);
-            return View("AdminPanelProduct", all);
+            var paginatedData = await _productService.GetAllProductsPaginated(token, pageIndex, pageSize);
+            var totalCount = await _productService.GetAllProductsCount(token);
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalCount = totalCount;
+            return View("AdminPanelProduct", paginatedData);
         }
 
         public IActionResult ProductDetail()

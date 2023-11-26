@@ -17,6 +17,10 @@ namespace CatenaccioStore.Application.Services.Products.Implementation
             _repository = repository;
             _unitOfWork = unitOfWork;
         }
+        public async Task<int> GetAllProductsCount(CancellationToken token)
+        {
+            return await _repository.GetAllProductsCount(token);
+        }
         public async Task<List<ProductDto>> GetAllProducts(CancellationToken cancellationToken)
         {
             var products =  await _repository.GetAllProducts(cancellationToken);
@@ -140,5 +144,7 @@ namespace CatenaccioStore.Application.Services.Products.Implementation
             var result = await _unitOfWork.SaveChangesAsync(token);
             return result;
         }
+
+       
     }
 }

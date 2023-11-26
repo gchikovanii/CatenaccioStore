@@ -4,6 +4,7 @@ using CatenaccioStore.Infrastructure.Localizations;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction;
 using CatenaccioStore.Infrastructure.Repositories.Abstraction.Products;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
 {
@@ -13,6 +14,11 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         public ProductRepository(IRepository<Product> productRepository)
         {
             _productRepository = productRepository;
+        }
+        public async Task<int> GetAllProductsCount(CancellationToken token)
+        {
+            var result = await _productRepository.GetCollectionAsync(token);
+            return result.Count();
         }
         public async Task<List<Product>> GetAllProducts(CancellationToken cancellationToken)
         {
@@ -99,5 +105,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
                 throw new NotFoundException(ErrorMessages.NotFound);
             await _productRepository.RemoveAsync(cancellationToken, entity.Id);
         }
+
+       
     }
 }

@@ -1,8 +1,9 @@
 ﻿@using CatenaccioStore.Application.Services.Products.DTOs
-@model IEnumerable<ProductDto>
+@model List<ProductDto>
 @{
     ViewData["Title"] = "List Of Products";
 }
+
 <form asp-action="Search" asp-controller="Products" method="get" class="d-flex" style="margin-top: 50px">
     <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" name="searchString">
     <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
@@ -11,7 +12,7 @@
 <table id="basic-datatable" class="table dt-responsive nowrap w-100">
     <thead>
         <tr>
-            <th>Produc tName</th>
+            <th>Product Name</th>
             <th>Short Title</th>
             <th>Description</th>
             <th>Price</th>
@@ -21,10 +22,8 @@
             <th>Actions</th>
         </tr>
     </thead>
-
-
     <tbody>
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
             <tr>
                 <td>@item.ProductName</td>
@@ -44,3 +43,16 @@
     </tbody>
 </table>
 
+<nav aria-label="Page navigation example" class="d-flex justify-content-center">
+    <ul class="pagination">
+        @if (ViewBag.PageSize > 0)
+        {
+            for (int i = 1; i <= ViewBag.TotalCount / ViewBag.PageSize + 1; i++)
+            {
+                <li class="page-item @(i == ViewBag.PageIndex ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("AdminPanelProduct", "Products", new { pageIndex = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        }
+    </ul>
+</nav>

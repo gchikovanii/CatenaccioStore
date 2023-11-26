@@ -1,5 +1,6 @@
 ﻿using CatenaccioStore.Application.Services.Products.DTOs;
 using CatenaccioStore.Domain.Entities.Products;
+using Newtonsoft.Json.Linq;
 
 namespace CatenaccioStore.Application.Services.Products.Abstraction
 {
@@ -7,6 +8,7 @@ namespace CatenaccioStore.Application.Services.Products.Abstraction
     {
         Task<List<ProductDto>> GetAllProducts(CancellationToken cancellationToken);
         Task<List<ProductDto>> GetAllProductsPaginated(CancellationToken cancellationToken, int pageIndex, int pageSize);
+        Task<int> GetAllProductsCount(CancellationToken token);
         Task<List<ProductDto>> GetAllProductsSortedBy(CancellationToken cancellationToken, string sort);
         Task<List<ProductDto>> FilteredProducts(CancellationToken cancellationToken, string? brand, string? category);
         Task<List<ProductDto>> SearchProducts(CancellationToken cancellationToken, string filter);

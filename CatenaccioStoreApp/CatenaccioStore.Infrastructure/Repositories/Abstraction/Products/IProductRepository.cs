@@ -6,6 +6,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Abstraction.Products
     {
         Task<List<Product>> GetAllProducts(CancellationToken cancellationToken);
         Task<Product> GetProductByName(CancellationToken cancellationToken, string name);
+        Task<int> GetAllProductsCount(CancellationToken token);
         Task<List<Product>> GetAllProductsPaginated(CancellationToken cancellationToken, int pageIndex, int pageSize);
         Task<List<Product>> GetAllProductsSortedBy(CancellationToken cancellationToken, string sort);
         Task<List<Product>> FilteredProducts(CancellationToken cancellationToken, string? brand, string? category);
