@@ -11,6 +11,7 @@ namespace CatenaccioStore.Application.Infrastruture.Validators.Products
             RuleFor(i => i.ShortTitle).MinimumLength(10).MaximumLength(50).NotEmpty();
             RuleFor(i => i.Brand).MinimumLength(2).NotEmpty();
             RuleFor(i => i.Description).MinimumLength(20).MaximumLength(200).NotEmpty();
+            RuleFor(i => i.Price).GreaterThan(0).NotEmpty();
         }
     }
 }

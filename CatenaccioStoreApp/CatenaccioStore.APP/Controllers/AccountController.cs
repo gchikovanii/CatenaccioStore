@@ -1,5 +1,4 @@
 ﻿using CatenaccioStore.APP.Data.ViewModels;
-using CatenaccioStore.Application.Services.Accounts.Abstraction;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatenaccioStore.APP.Controllers

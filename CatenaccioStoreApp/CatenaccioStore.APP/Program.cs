@@ -1,6 +1,11 @@
+using CatenaccioStore.API.Infrastructure.Extensions;
 using CatenaccioStore.Application.Infrastruture.Extensions;
+using CatenaccioStore.Domain.Entities.Users;
+using CatenaccioStore.Persistence.DataContext;
+using CatenaccioStore.Persistence.store;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +26,19 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 });
 #endregion
+#region Sql Connection
+builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                                                  options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(ConnectionStrings.DefaultConnectionString))), ServiceLifetime.Scoped);
+#endregion
+#region Add Ef
+builder.Services.AddIdentity<AppUser, AppRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+#endregion
+builder.Services.AddJwt(builder.Configuration);
+builder.Services.AddCloudinary(builder.Configuration);
+builder.Services.AddServices();
+
 
 var app = builder.Build();
 app.UseRequestLocalization();
@@ -34,8 +52,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

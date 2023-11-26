@@ -24,7 +24,6 @@ namespace CatenaccioStore.Application.Infrastruture.Extensions
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductImageService, ProductImageService>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

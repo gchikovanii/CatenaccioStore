@@ -12,7 +12,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddServices();
-builder.Services.AddCustomSwagger();
 builder.Services.AddJwt(builder.Configuration);
 builder.Services.AddCloudinary(builder.Configuration);
 #region AddFluentValidation

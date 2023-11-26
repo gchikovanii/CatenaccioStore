@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CatenaccioStore.API\CatenaccioStore.API.csproj" />
     <ProjectReference Include="..\CatenaccioStore.Application\CatenaccioStore.Application.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,6 @@
 ﻿using CatenaccioStore.API.Infrastructure.constans;
 using CatenaccioStore.Application.Services.Products.Abstraction;
 using CatenaccioStore.Application.Services.Products.DTOs;
-using CatenaccioStore.Application.Services.Products.Implementation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
