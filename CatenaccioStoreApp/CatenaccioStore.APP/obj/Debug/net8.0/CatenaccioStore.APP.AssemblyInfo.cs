@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CatenaccioStore.APP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2054ec825edcc0c52d9aaa12ad6853bf2f7192f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d22eb15b275a164d1bffb18c1c6635c0dc3a904")]
 [assembly: System.Reflection.AssemblyProductAttribute("CatenaccioStore.APP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CatenaccioStore.APP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
