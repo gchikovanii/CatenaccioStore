@@ -43,14 +43,23 @@
                     </div>
                 </div>
                 <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-user-tie"></i> @Localizer["AdminPanel"]
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                            <a asp-controller="AdminPanel" asp-action="AdminPanelCreateProduct" class="nav-link mx-2 text-uppercase active" aria-current="page"><i class="fa-solid fa-plus"> Product</i></a>
+                            <a asp-controller="AdminPanel" asp-action="" class="nav-link mx-2 text-uppercase active " aria-current="page"><i class="fa-solid fa-user-plus"> User</i></a>
+                            <a asp-controller="AdminPanel" asp-action="AdminPanelProduct" class="nav-link mx-2 text-uppercase active" aria-current="page"><i class="fa-solid fa-basket-shopping"> Products</i></a>
+                            <a asp-controller="AdminPanel" asp-action="" class="nav-link mx-2 text-uppercase active " aria-current="page"><i class="fa-solid fa-users"> Users</i></a>
+                        </div>
+                    </li>
+
                     <li class="nav-item">
-                        <a asp-controller="AdminPanel" asp-action="AdminPanel" class="nav-link mx-2 text-uppercase active " aria-current="page">Panel</a>
+                        <a asp-controller="Products" asp-action="Offers" class="nav-link mx-2 text-uppercase active" aria-current="page">@Localizer["Offers"]</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Product" asp-action="Offers" class="nav-link mx-2 text-uppercase active " aria-current="page">@Localizer["Offers"]</a>
-                    </li>
-                    <li class="nav-item">
-                        <a asp-controller="Product" asp-action="Products" class="nav-link mx-2 text-uppercase">@Localizer["Products"]</a>
+                        <a asp-controller="Products" asp-action="Products" class="nav-link mx-2 text-uppercase">@Localizer["Products"]</a>
                     </li>
                     <li class="nav-item">
                         <a asp-controller="About" asp-action="About" class="nav-link mx-2 text-uppercase">@Localizer["About"]</a>
@@ -81,20 +90,20 @@
 
 @* For Changing language
  *@<script>
-    var currentCulture = new URLSearchParams(window.location.search).get('ui-culture');
-    document.getElementById('languageSelector').value = currentCulture;
+       var currentCulture = new URLSearchParams(window.location.search).get('ui-culture');
+       document.getElementById('languageSelector').value = currentCulture;
 
-    document.getElementById('languageSelector').addEventListener('change', function () {
-        var selectedValue = this.value;
-        var currentUrl = window.location.href;
-        var queryString = window.location.search;
-        if (queryString) {
-            var updatedUrl = currentUrl.replace(/(ui-culture=)[^\&]+/, '$1' + selectedValue);
-            window.location.href = updatedUrl;
-        } else {
-            var separator = currentUrl.includes('?') ? '&' : '?';
-            var updatedUrl = currentUrl + separator + 'ui-culture=' + selectedValue;
-            window.location.href = updatedUrl;
-        }
-    });
+       document.getElementById('languageSelector').addEventListener('change', function () {
+           var selectedValue = this.value;
+           var currentUrl = window.location.href;
+           var queryString = window.location.search;
+           if (queryString) {
+               var updatedUrl = currentUrl.replace(/(ui-culture=)[^\&]+/, '$1' + selectedValue);
+               window.location.href = updatedUrl;
+           } else {
+               var separator = currentUrl.includes('?') ? '&' : '?';
+               var updatedUrl = currentUrl + separator + 'ui-culture=' + selectedValue;
+               window.location.href = updatedUrl;
+           }
+       });
 </script>

@@ -1,0 +1,126 @@
+﻿@using CatenaccioStore.Application.Services.Products.DTOs
+@model GetProductsDto
+
+@{
+    ViewData["Title"] = "Add a new Product";
+}
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Add a new Product</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="AdminPanelCreateProduct" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger">
+                    </div>
+                    <div class="form-group" id="imageContainer">
+                        <label class="control-label">Images</label>
+                        <div class="input-group mb-3">
+                            <input type="file" name="images" class="form-control" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary" onclick="addImageInput()">Add Image</button>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Images" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductName" class="control-label"></label>
+                        <input asp-for="ProductName" class="form-control" />
+                        <span asp-validation-for="ProductName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ShortTitle" class="control-label"></label>
+                        <input asp-for="ShortTitle" class="form-control" />
+                        <span asp-validation-for="ShortTitle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Quantity" class="control-label"></label>
+                        <input asp-for="Quantity" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CategoryId" class="control-label">Category</label>
+                        <select asp-for="CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))" class="form-control">
+                            <option value="">Select Category</option>
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Brand" class="control-label"></label>
+                        <input asp-for="Brand" class="form-control" />
+                        <span asp-validation-for="Brand" class="text-danger"></span>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        </div>
+                        <div class="col text-right mt-auto">
+                            <a class="btn btn-outline-secondary" asp-action="AdminPanelProduct">Back to All</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.10.3/cloudinary-core-shrinkwrap.min.js"></script>
+    <script>
+        function openCloudinaryWidget(input) {
+            cloudinary.openUploadWidget(
+                {
+                    cloud_name: 'catenaccioshop',
+                    upload_preset: 'flas6mi9'
+                },
+                function (error, result) {
+                    if (!error && result && result.length > 0) {
+                        var imageUrl = result[0].url;
+                        input.val(imageUrl);
+                    }
+                }
+            );
+        }
+
+        function addImageInput() {
+            var container = $('#imageContainer');
+
+            var inputGroup = $('<div class="input-group mb-3"></div>');
+
+            var input = $('<input type="text" name="images" class="form-control" readonly />');
+
+            var appendDiv = $('<div class="input-group-append"></div>');
+
+            var uploadButton = $('<button type="button" class="btn btn-outline-secondary">Upload Image</button>');
+            uploadButton.on('click', function () {
+                openCloudinaryWidget(input);
+            });
+
+            var removeButton = $('<button type="button" class="btn btn-outline-secondary">Remove Image</button>');
+            removeButton.on('click', function () {
+                inputGroup.remove();
+            });
+
+            appendDiv.append(uploadButton);
+            appendDiv.append(removeButton);
+            inputGroup.append(input);
+            inputGroup.append(appendDiv);
+
+            container.append(inputGroup);
+        }
+    </script>
+}

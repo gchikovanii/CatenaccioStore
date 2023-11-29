@@ -5,6 +5,7 @@ namespace CatenaccioStore.Infrastructure.Repositories.Abstraction.Products
     public interface IProductRepository
     {
         Task<List<Product>> GetAllProducts(CancellationToken cancellationToken);
+        Task<Product> GetById(int Id,CancellationToken cancellationToken);
         Task<Product> GetProductByName(CancellationToken cancellationToken, string name);
         Task<int> GetAllProductsCount(CancellationToken token);
         Task<List<Product>> GetAllProductsPaginated(CancellationToken cancellationToken, int pageIndex, int pageSize);

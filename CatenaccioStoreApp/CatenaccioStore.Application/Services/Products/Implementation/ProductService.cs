@@ -11,19 +11,48 @@ namespace CatenaccioStore.Application.Services.Products.Implementation
     {
         private readonly IProductRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
-        
+
         public ProductService(IProductRepository repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
         }
+         
+        public async Task<int> AdminPanelCreateProduct(CancellationToken token)
+        {
+            return await _repository.GetAllProductsCount(token);
+        }
+        public async Task<ProductDto> GetById(int Id, CancellationToken token)
+        {
+            var product = await _repository.GetById(Id, token);
+            return new ProductDto()
+            {
+                Id = product.Id,
+                ProductName = product.ProductName,
+                ShortTitle = product.ShortTitle,
+                Description = product.Description,
+                Brand = product.Brand,
+                CategoryName = product.Category.Name,
+                Price = product.Price,
+                Quantity = product.Quantity,
+                Images = product.Images.Select(i => new ProductImage()
+                {
+                    Url = i.Url
+                }).ToList()
+            };
+        }
         public async Task<int> GetAllProductsCount(CancellationToken token)
         {
             return await _repository.GetAllProductsCount(token);
         }
+        public async Task<ProductDto> GetProductByName(string name, CancellationToken token)
+        {
+            var result = await _repository.GetProductByName(token, name);
+            return result.Adapt<ProductDto>();
+        }
         public async Task<List<ProductDto>> GetAllProducts(CancellationToken cancellationToken)
         {
-            var products =  await _repository.GetAllProducts(cancellationToken);
+            var products = await _repository.GetAllProducts(cancellationToken);
             return products?.Select(product => new ProductDto()
             {
                 Id = product.Id,
@@ -128,7 +157,7 @@ namespace CatenaccioStore.Application.Services.Products.Implementation
         public async Task<bool> AddProduct(CreationProductDto product, CancellationToken token)
         {
             await _repository.CreateAsync(token, product.Adapt<Product>());
-            var result = await _unitOfWork.SaveChangesAsync(token); 
+            var result = await _unitOfWork.SaveChangesAsync(token);
             return result;
         }
 
@@ -145,6 +174,6 @@ namespace CatenaccioStore.Application.Services.Products.Implementation
             return result;
         }
 
-       
+
     }
 }

@@ -15,6 +15,11 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
         {
             _productRepository = productRepository;
         }
+        public async Task<Product> GetById(int Id, CancellationToken cancellationToken)
+        {
+            var result = await _productRepository.GetQuery(i => i.Id == Id).Include(i => i.Images).Include(i => i.Category).SingleOrDefaultAsync(cancellationToken);
+            return result ?? throw new NotFoundException(ErrorMessages.NotFound);
+        }
         public async Task<int> GetAllProductsCount(CancellationToken token)
         {
             var result = await _productRepository.GetCollectionAsync(token);

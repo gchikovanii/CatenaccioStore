@@ -18,15 +18,6 @@ namespace CatenaccioStore.APP.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> AdminPanelProduct(CancellationToken token, int pageIndex = 1, int pageSize = 10)
-        {
-            var paginatedData = await _productService.GetAllProductsPaginated(token, pageIndex, pageSize);
-            var totalCount = await _productService.GetAllProductsCount(token);
-            ViewBag.PageIndex = pageIndex;
-            ViewBag.PageSize = pageSize;
-            ViewBag.TotalCount = totalCount;
-            return View(paginatedData);
-        }
         public async Task<IActionResult> Search(CancellationToken token,string searchString, int pageIndex = 1, int pageSize = 10)
         {
             if (!string.IsNullOrEmpty(searchString))

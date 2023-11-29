@@ -6,6 +6,8 @@ namespace CatenaccioStore.Application.Services.Products.Abstraction
 {
     public interface IProductService
     {
+        Task<ProductDto> GetProductByName(string name, CancellationToken token);
+        Task<ProductDto> GetById(int Id, CancellationToken token);
         Task<List<ProductDto>> GetAllProducts(CancellationToken cancellationToken);
         Task<List<ProductDto>> GetAllProductsPaginated(CancellationToken cancellationToken, int pageIndex, int pageSize);
         Task<int> GetAllProductsCount(CancellationToken token);

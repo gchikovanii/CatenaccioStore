@@ -1,0 +1,58 @@
+﻿@using CatenaccioStore.Application.Services.Products.DTOs
+@model List<ProductDto>
+@{
+    ViewData["Title"] = "List Of Products";
+}
+
+<form asp-action="Search" asp-controller="Products" method="get" class="d-flex" style="margin-top: 50px">
+    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" name="searchString">
+    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+</form>
+
+<table id="basic-datatable" class="table dt-responsive nowrap w-100">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Short Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.ShortTitle</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.Brand</td>
+                <td>@item.Quantity</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    <a class="btn btn-outline-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <a class="btn btn-outline-warning" asp-controller="AdminPanel" asp-action="AdminPanelProductDetails" asp-route-id="@item.Id"><i class="fa-solid fa-eye"></i></a>
+                    <a class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center">
+    <ul class="pagination">
+        @if (ViewBag.PageSize > 0)
+        {
+            for (int i = 1; i <= ViewBag.TotalCount / ViewBag.PageSize + 1; i++)
+            {
+                <li class="page-item @(i == ViewBag.PageIndex ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("AdminPanelProduct", "Products", new { pageIndex = i, pageSize = ViewBag.PageSize })">@i</a>
+                </li>
+            }
+        }
+    </ul>
+</nav>
