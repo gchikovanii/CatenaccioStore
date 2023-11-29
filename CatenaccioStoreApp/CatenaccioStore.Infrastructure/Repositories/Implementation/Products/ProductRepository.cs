@@ -92,13 +92,21 @@ namespace CatenaccioStore.Infrastructure.Repositories.Implementation.Products
 
         public async Task UpdateAsync(CancellationToken cancellationToken, Product product)
         {
-            var entity = await _productRepository.Table.FirstOrDefaultAsync(i => i.ProductName.ToLower() == product.ProductName.ToLower());
+            var entity = await _productRepository.Table.FirstOrDefaultAsync(i => i.Id == product.Id);
             if (entity == null)
                 throw new NotFoundException(ErrorMessages.NotFound);
             if(product.ProductName != null) 
                 entity.ProductName = product.ProductName;
+            if (product.ShortTitle != null)
+                entity.ShortTitle = product.ShortTitle;
+            if (product.Description != null)
+                entity.Description = product.Description;
             if (product.Price != 0 )
                 entity.Price = product.Price;
+            if (product.Quantity != 0)
+                entity.Quantity = product.Quantity;
+            if (product.Brand != null)
+                entity.Brand = product.Brand;
             if (product.CategoryId != 0)
                 entity.CategoryId = product.CategoryId;
             _productRepository.Update(entity, cancellationToken);

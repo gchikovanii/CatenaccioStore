@@ -27,12 +27,31 @@ namespace CatenaccioStore.APP.Controllers
             var response = new AdminPanelVM();
             return View(response);
         }
+        #region Details
+        public async Task<IActionResult> AdminPanelProduct(CancellationToken token, int pageIndex = 1, int pageSize = 10)
+        {
+            var paginatedData = await _productService.GetAllProductsPaginated(token, pageIndex, pageSize);
+            var totalCount = await _productService.GetAllProductsCount(token);
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalCount = totalCount;
+            return View(paginatedData);
+        }
+        public async Task<IActionResult> AdminPanelProductDetails(int Id, CancellationToken token)
+        {
+            var productDetials = await _productService.GetById(Id, token);
+            if (productDetials == null)
+                return View("NotFound");
+            return View(productDetials);
+        }
+        #endregion
+        #region Create Product
         public async Task<IActionResult> AdminPanelCreateProduct()
         {
             CancellationToken token = new CancellationToken();
             var productDto = new GetProductsDto();
             var result = await _categoryService.GetAll(token);
-            productDto.Categories = result.Adapt<List<Category>>(); 
+            productDto.Categories = result.Adapt<List<Category>>();
             return View(productDto);
         }
         [HttpPost]
@@ -52,24 +71,40 @@ namespace CatenaccioStore.APP.Controllers
                 };
                 await _productImageService.AddImage(token, imageDto);
             }
-            return RedirectToAction("AdminPanelProduct");   
+            return RedirectToAction("AdminPanelProduct");
         }
-
-        public async Task<IActionResult> AdminPanelProduct(CancellationToken token, int pageIndex = 1, int pageSize = 10)
-        {
-            var paginatedData = await _productService.GetAllProductsPaginated(token, pageIndex, pageSize);
-            var totalCount = await _productService.GetAllProductsCount(token);
-            ViewBag.PageIndex = pageIndex;
-            ViewBag.PageSize = pageSize;
-            ViewBag.TotalCount = totalCount;
-            return View(paginatedData);
-        }
-        public async Task<IActionResult> AdminPanelProductDetails(int Id, CancellationToken token)
+        #endregion
+        #region UpdateProduct
+        public async Task<IActionResult> AdminPanelUpdateProduct(int Id, CancellationToken token)
         {
             var productDetials = await _productService.GetById(Id, token);
+            var productDto = new UpdateProductDto();
+            var result = await _categoryService.GetAll(token);
+            productDto.Categories = result.Adapt<List<Category>>();
+            productDto.ShortTitle = productDetials.ShortTitle;
+            productDto.Description = productDetials.Description;
+            productDto.CategoryName = productDetials.CategoryName;
+            productDto.Brand = productDetials.Brand;
+            productDto.ProductName = productDetials.ProductName;
+            productDto.Price = productDetials.Price;
+            productDto.Quantity = productDetials.Quantity;
+           
             if (productDetials == null)
                 return View("NotFound");
-            return View(productDetials);
+            return View(productDto);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AdminPanelUpdateProduct(UpdateProductDto product, CancellationToken token)
+        {
+           
+            await _productService.UpdateProductPrice(product, token);
+            return RedirectToAction("AdminPanelProduct");
+        }
+
+        #endregion
+        #region Delete
+
+        #endregion
     }
 }
