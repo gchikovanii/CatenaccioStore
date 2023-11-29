@@ -23,7 +23,7 @@ namespace CatenaccioStore.APP.Controllers
             var response = new AdminPanelVM();
             return View(response);
         }
-
+        #region Products
         #region Details
         public async Task<IActionResult> AdminPanelProduct(CancellationToken token, int pageIndex = 1, int pageSize = 10)
         {
@@ -109,6 +109,30 @@ namespace CatenaccioStore.APP.Controllers
             await _productService.DeleteProduct(productDetials.ProductName, token);
             return RedirectToAction("AdminPanelProduct");
         }
+
+        #endregion
+        #endregion
+
+
+        #region Categories
+        #region Create Product
+        public IActionResult AdminPanelCreateCategory()
+        {
+            var categoryDto = new CreateCategoryDto();
+            return View(categoryDto);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AdminPanelCreateCategory(CreateCategoryDto category, List<IFormFile> images, CancellationToken token)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(category);
+            }
+            await _categoryService.AddCategory(token, category);
+            return RedirectToAction("AdminPanelProduct");
+        }
+        #endregion
+
 
         #endregion
     }
