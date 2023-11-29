@@ -18,15 +18,12 @@ namespace CatenaccioStore.APP.Controllers
             _categoryService = categoryService;
             _productImageService = productImageService;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult AdminPanel()
         {
             var response = new AdminPanelVM();
             return View(response);
         }
+
         #region Details
         public async Task<IActionResult> AdminPanelProduct(CancellationToken token, int pageIndex = 1, int pageSize = 10)
         {
@@ -101,9 +98,17 @@ namespace CatenaccioStore.APP.Controllers
             await _productService.UpdateProductPrice(product, token);
             return RedirectToAction("AdminPanelProduct");
         }
-
         #endregion
         #region Delete
+        [HttpPost]
+        public async Task<IActionResult> AdminPanelDeleteProduct(int Id, CancellationToken token)
+        {
+            var productDetials = await _productService.GetById(Id, token);
+            if (productDetials == null)
+                return View("NotFound");
+            await _productService.DeleteProduct(productDetials.ProductName, token);
+            return RedirectToAction("AdminPanelProduct");
+        }
 
         #endregion
     }

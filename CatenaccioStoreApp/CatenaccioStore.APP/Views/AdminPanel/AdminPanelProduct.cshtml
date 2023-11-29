@@ -36,7 +36,11 @@
                 <td>
                     <a class="btn btn-outline-primary" asp-controller="AdminPanel" asp-action="AdminPanelUpdateProduct" asp-route-id="@item.Id"><i class="fa-solid fa-pencil"></i></a>
                     <a class="btn btn-outline-warning" asp-controller="AdminPanel" asp-action="AdminPanelProductDetails" asp-route-id="@item.Id"><i class="fa-solid fa-eye"></i></a>
-                    <a class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-outline-danger delete-product-btn"
+                       data-id="@item.Id"
+                       data-action="@Url.Action("AdminPanelDeleteProduct", "AdminPanel", new { area = "" })">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         }
@@ -56,3 +60,36 @@
         }
     </ul>
 </nav>
+
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.delete-product-btn').on('click', function () {
+                var productId = $(this).data('id');
+                var actionUrl = $(this).data('action');
+
+                // Display a confirmation dialog
+                var confirmDelete = confirm('Are you sure you want to delete this product?');
+
+                if (confirmDelete) {
+                    // Make an AJAX request to delete the product
+                    $.ajax({
+                        type: 'POST',
+                        url: actionUrl,
+                        data: { Id: productId },
+                        success: function () {
+                            // Redirect or update the UI as needed
+                            window.location.href = '@Url.Action("AdminPanelProduct", "AdminPanel", new { area = "" })';
+                        },
+                        error: function () {
+                            alert('Error deleting product.');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
