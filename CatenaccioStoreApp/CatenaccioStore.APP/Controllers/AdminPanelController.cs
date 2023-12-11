@@ -112,8 +112,6 @@ namespace CatenaccioStore.APP.Controllers
 
         #endregion
         #endregion
-
-
         #region Categories
         #region Create Product
         public IActionResult AdminPanelCreateCategory()
