@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.Persistence", "CatenaccioStore.Persistence\CatenaccioStore.Persistence.csproj", "{7B403BCD-B4E1-464A-B76E-92F782148A0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatenaccioStore.APP", "CatenaccioStore.APP\CatenaccioStore.APP.csproj", "{BC55003E-8D64-4B17-BB8A-5F288A399885}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,10 +47,6 @@ Global
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC55003E-8D64-4B17-BB8A-5F288A399885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC55003E-8D64-4B17-BB8A-5F288A399885}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC55003E-8D64-4B17-BB8A-5F288A399885}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC55003E-8D64-4B17-BB8A-5F288A399885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,7 +60,6 @@ Global
 		{8791AA66-D150-4CA6-85F3-152336B2C0A5} = {CC291BAF-7E51-42FE-859F-CF1DF38E8A5D}
 		{A796A81F-67A3-4F44-9E0B-349DCD8E151B} = {8791AA66-D150-4CA6-85F3-152336B2C0A5}
 		{7B403BCD-B4E1-464A-B76E-92F782148A0E} = {8791AA66-D150-4CA6-85F3-152336B2C0A5}
-		{BC55003E-8D64-4B17-BB8A-5F288A399885} = {EFD872FD-A931-4BDE-8ED4-31D95012D830}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD11AAA2-C38D-4A8F-8A80-D42F51C5062B}
