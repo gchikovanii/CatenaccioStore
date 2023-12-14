@@ -1,0 +1,25 @@
+.footer {
+  margin-top: 601px;
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons mat-icon {
+  margin-right: 10px;
+}
+
+.copyright {
+  flex: 1;
+  text-align: right; 
+}

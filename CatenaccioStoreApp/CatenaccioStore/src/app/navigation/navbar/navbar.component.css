@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-container {
+  margin-top: 10px;
+  margin-left: 10px; 
+}
+.logo {
+  width: 120px; 
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-items a {
+  margin-right: 20px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons button {
+  margin-left: 10px; 
+}
