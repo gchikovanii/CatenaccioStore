@@ -1,33 +1,10 @@
-.footer {
-  
-  color: white;
+section, footer {
+  background: #3f51b5;
+  color: #ffffff;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.social-icons a {
-  color: white;
-  text-decoration: none;
-}
-
-.social-icons mat-icon {
-  margin-right: 10px;
-}
-
-.copyright {
-  flex: 1;
-  text-align: right; 
-}
-.placeholder{
-  display: flex;
-  flex-flow: column;
-  height: calc( 100vh - 60px); 
-}
-.inner-placeholder{
-  flex: 1;
+footer p {
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: -20px;
 }
