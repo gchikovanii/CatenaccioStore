@@ -12,13 +12,10 @@
       <button mat-button routerLink="/contact">Contact</button>
       <button mat-button routerLink="/adminpanel">Admin Panel</button>
     </mat-menu>
-    <button mat-icon-button (click)="openRegistration()">
-      <mat-icon>person_add</mat-icon>
-    </button>
-    <button mat-icon-button (click)="openLogin()">
+    <button mat-icon-button  routerLink="/account">
       <mat-icon>person</mat-icon>
     </button>
-    <button mat-icon-button (click)="openBasket()">
+    <button mat-icon-button routerLink="/basket">
       <mat-icon>shopping_basket</mat-icon>
     </button>
   </div>
@@ -32,10 +29,7 @@
   </div> 
 
   <div class="icons">
-    <button mat-icon-button routerLink="/registration">
-      <mat-icon>person_add</mat-icon>
-    </button>
-    <button mat-icon-button routerLink="/login">
+    <button mat-icon-button routerLink="/account">
       <mat-icon>person</mat-icon>
     </button>
     <button mat-icon-button routerLink="/basket">
