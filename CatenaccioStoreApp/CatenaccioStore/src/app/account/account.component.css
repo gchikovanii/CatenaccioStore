@@ -90,3 +90,9 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+
+@media (max-width: 500px) {
+	.container{
+		margin-left: 25px;
+	}
+}
