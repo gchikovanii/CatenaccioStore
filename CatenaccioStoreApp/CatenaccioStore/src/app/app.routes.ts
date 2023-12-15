@@ -4,6 +4,9 @@ import { ProductsComponent } from './products/products.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { ContactComponent } from './contact/contact.component';
 import { OrdersComponent } from './orders/orders.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { BasketComponent } from './basket/basket.component';
 
 
 export const routes: Routes = [
@@ -12,4 +15,7 @@ export const routes: Routes = [
     { path: 'orders', component: OrdersComponent }, 
     { path: 'contact', component: ContactComponent }, 
     { path: 'adminpanel', component: AdminpanelComponent },
+    { path: 'basket', component: BasketComponent },
+    { path: 'registration', component: RegistrationComponent },
+    { path: 'login', component: LoginComponent },
   ];

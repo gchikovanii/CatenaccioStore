@@ -34,7 +34,7 @@ export class NavbarComponent {
     this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 900px)');
   }
   openRegistration() {
-    // Implement logic to open the registration form
+    
   }
 
   openLogin() {
