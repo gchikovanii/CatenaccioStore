@@ -3,12 +3,23 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .logo-container {
   margin-top: 10px;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
+
 .logo {
-  width: 120px; 
+  width: 120px;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button button {
+  margin-right: 10px;
 }
 
 .nav-items {
@@ -24,5 +35,19 @@
 }
 
 .icons button {
-  margin-left: 10px; 
+  margin-left: 10px;
+}
+
+@media (max-width: 900px) {
+  .logo-container {
+    margin-left: 0;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .icons {
+    display: none;
+  }
 }

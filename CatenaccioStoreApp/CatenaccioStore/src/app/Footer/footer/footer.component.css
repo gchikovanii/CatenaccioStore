@@ -1,4 +1,5 @@
 .footer {
+  
   color: white;
 }
 
@@ -21,4 +22,12 @@
 .copyright {
   flex: 1;
   text-align: right; 
+}
+.placeholder{
+  display: flex;
+  flex-flow: column;
+  height: calc( 100vh - 60px); 
+}
+.inner-placeholder{
+  flex: 1;
 }

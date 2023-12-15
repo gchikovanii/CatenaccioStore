@@ -1,14 +1,36 @@
 <mat-toolbar color="primary" class="navbar">
-  <div class="logo-container">
+  <div class="logo-container" *ngIf="!isSmallScreen" [ngClass]="{'hidden-element': !isSmallScreen, 'visible-element': isSmallScreen}">
     <img src="../../../assets/logo.png" alt="Logo" class="logo">
   </div>
-  <div class="nav-items">
+
+  <div class="menu-button" *ngIf="isSmallScreen" [ngClass]="{'hidden-element': isSmallScreen, 'visible-element': !isSmallScreen}">
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-button routerLink="/">Offers</button>
+      <button mat-button routerLink="/product">Products</button>
+      <button mat-button routerLink="/orders">Orders</button>
+      <button mat-button routerLink="/contact">Contact</button>
+      <button mat-button routerLink="/adminpanel">Admin Panel</button>
+    </mat-menu>
+    <button mat-icon-button (click)="openRegistration()">
+      <mat-icon>person_add</mat-icon>
+    </button>
+    <button mat-icon-button (click)="openLogin()">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button mat-icon-button (click)="openBasket()">
+      <mat-icon>shopping_basket</mat-icon>
+    </button>
+  </div>
+
+  <div class="nav-items" *ngIf="!isSmallScreen" [ngClass]="{'hidden-element': !isSmallScreen, 'visible-element': isSmallScreen}">
     <a mat-button routerLink="/">Offers</a>
     <a mat-button routerLink="/product">Products</a>
     <a mat-button routerLink="/orders">Orders</a>
     <a mat-button routerLink="/contact">Contact</a>
     <a mat-button routerLink="/adminpanel">Admin Panel</a>
-  </div>
+  </div> 
+
   <div class="icons">
     <button mat-icon-button (click)="openRegistration()">
       <mat-icon>person_add</mat-icon>
