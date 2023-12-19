@@ -1,0 +1,168 @@
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill Your Information</ng-template>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" type="email" formControlName="firstCtrl" required>
+          </mat-form-field>
+        <mat-form-field>
+          <mat-label>Full Name</mat-label>
+          <input matInput placeholder="ex: Giorgi Cikovani" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Address" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" type="number" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Personal Number</mat-label>
+            <input matInput placeholder="Personal Number" type="number" formControlName="firstCtrl" required>
+          </mat-form-field>
+        <div>
+          <button class="next-button" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Fill payment info">
+      <form [formGroup]="secondFormGroup">
+        <div class="modal clearfix">
+          <div class="modal-product">
+            <div class="product">
+              <div class="product-slideshow">
+                
+                <div class="productSlides fade">
+                  <img src="https://github.com/EricGFigueroa/002-DailyUI-Gucci-Checkout/blob/master/img/gucci-bag-1.png?raw=true" style="width:100%">
+                </div>
+      
+                <div class="productSlides fade">
+                  <img src="https://github.com/EricGFigueroa/002-DailyUI-Gucci-Checkout/blob/master/img/gucci-bag-2.png?raw=true" style="width:100%">
+                </div>
+      
+                <div class="productSlides fade">
+                  <img src="https://github.com/EricGFigueroa/002-DailyUI-Gucci-Checkout/blob/master/img/gucci-bag-3.png?raw=true" style="width:100%">
+                </div>
+      
+                <div class="productSlides fade">
+                  <img src="https://github.com/EricGFigueroa/002-DailyUI-Gucci-Checkout/blob/master/img/gucci-bag-4.png?raw=true" style="width:100%">
+                </div>
+      
+                <div class="productSlides fade">
+                  <img src="https://github.com/EricGFigueroa/002-DailyUI-Gucci-Checkout/blob/master/img/gucci-bag-5.png?raw=true" style="width:100%">
+                </div>
+      
+                <br>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                  <span class="dot" onclick="currentSlide(4)"></span>
+                  <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+      
+              </div>
+      
+              <h1 style="color: #fff;" class="product-name">
+               Backpack<br>Supreme Backpack
+              </h1>
+              <p style="color: #fff;" class="product-code-name">
+                Boots Nike
+              </p>
+              <p style="color: #fff;" class="product-price">
+                $100
+              </p>
+      
+            </div>
+      
+            <div class="round-shape"></div>
+          </div>
+          <div class="modal-info">
+            <div class="info">
+              <h2>Payment Information</h2>
+              <form action="#">
+                <ul class="form-list">
+                  <li class="form-list-row">
+                    <div class="user">
+                      <label for="#">Name</label><br>
+                      <i class="fas fa-user"></i><input type="text" required>
+                    </div>
+                  </li>
+                  <li class="form-list-row">
+                    <div class="number">
+                      <label for="#">Card Number</label><br>
+                      <i class="far fa-credit-card"></i><input type="text" required>
+                    </div>
+                  </li>
+                  <li class="form-list-row clearfix">
+                    <div class="date">
+                      <label for="#">Expiration Date</label><br>
+                      <input class="month" type="text" required placeholder="MM">
+                      <input class="year" type="text" required placeholder="YY">
+                    </div>
+                    <div class="cvc">
+                      <label for="#">CVC</label><i class="fas fa-question-circle"></i><br>
+                      <input type="text" required placeholder="123">
+                    </div>
+                  </li>
+                </ul>
+                <button mat-button matStepperNext>Next</button>
+              </form>
+              <mat-form-field>
+                <mat-label>Zip Code</mat-label>
+                <input  matInput formControlName="secondCtrl" placeholder="Zip Code ex: 0162"
+                       required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+
+
+
+    
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+
+
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("productSlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>

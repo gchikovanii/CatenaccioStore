@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { OrdersComponent } from './orders/orders.component';
 import { BasketComponent } from './basket/basket.component';
 import { AccountComponent } from './account/account.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 export const routes: Routes = [
@@ -16,4 +17,5 @@ export const routes: Routes = [
     { path: 'adminpanel', component: AdminpanelComponent },
     { path: 'basket', component: BasketComponent },
     { path: 'account', component: AccountComponent },
+    { path: 'payment', component: PaymentComponent },
   ];
