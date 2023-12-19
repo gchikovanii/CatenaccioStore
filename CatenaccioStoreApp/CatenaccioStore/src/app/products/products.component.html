@@ -1,3 +1,10 @@
+<form action="" class="search-bar">
+    <input type="search" name="search" pattern=".*\S.*" required>
+    <button class="search-btn" type="submit">
+      <span>Search</span>
+    </button>
+  </form>
+
 <main class="main bd-grid">
     <article class="card">
         <div class="card__img">
@@ -55,3 +62,12 @@
         </div>
     </article>
 </main>
+
+
+<mat-paginator style="display: flex; justify-content: center;" [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+
+
