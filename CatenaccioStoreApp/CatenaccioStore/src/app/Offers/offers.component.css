@@ -67,8 +67,8 @@
   position: relative;
   overflow: hidden;
   margin: 10px;
-  min-width: 230px;
-  max-width: 315px;
+  margin-top: 50px;
+  max-width: 100%; /* Set max-width to 100% */
   width: 100%;
   background: #ffffff;
   text-align: left;
@@ -79,6 +79,7 @@
   transform: translateZ(0);
   -webkit-perspective: 20em;
   perspective: 20em;
+ 
 }
 .snip1418 * {
   -webkit-box-sizing: border-box;
@@ -163,4 +164,15 @@
 .snip1418:hover .add-to-cart i,
 .snip1418.hover .add-to-cart i {
   background-color: #2980b9;
+}
+
+@media only screen and (max-width: 600px) {
+  .product-row {
+      flex-direction: column; /* Stack cards in a column */
+      align-items: center; /* Center cards horizontally */
+  }
+
+  .snip1418 {
+      max-width: 100%; /* Set max-width to 100% for responsiveness */
+  }
 }

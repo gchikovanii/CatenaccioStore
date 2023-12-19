@@ -1,0 +1,74 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+.my_account_orders {
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto; /* Add this line to center the table */
+}
+
+.my_account_orders th {
+    text-align: left;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+th,
+td {
+    padding: 6px;
+}
+
+@media only screen and (max-width: 600px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 35%;
+    }
+
+    td:last-child {
+        border-width: 0;
+    }
+
+    td:before {
+        content: attr(data-title);
+        color: #ccc;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+}
