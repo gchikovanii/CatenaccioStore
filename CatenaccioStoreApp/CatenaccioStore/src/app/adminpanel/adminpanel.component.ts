@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './adminpanel.component.css'
 })
 export class AdminpanelComponent {
-
+  
 }
