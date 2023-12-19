@@ -18,7 +18,7 @@ body {
     border-spacing: 0;
     max-width: 600px;
     width: 100%;
-    margin: 0 auto; /* Add this line to center the table */
+    margin: 0 auto; 
 }
 
 .my_account_orders th {

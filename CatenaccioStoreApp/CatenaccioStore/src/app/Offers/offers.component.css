@@ -1,16 +1,16 @@
 .product-row {
     display: flex;
-    justify-content: center; /* Center the figures horizontally */
-    align-items: flex-start; /* Align the figures at the top of the container */
-    gap: 10px; /* Adjust the space between figures */
-    margin: 0; /* Remove default margin */
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 10px; 
+    margin: 0; 
   }
   
-  /* Optional: Add some styling to individual figures */
+  
   .product-row figure {
-    max-width: 100%; /* Ensure figures don't exceed the container width */
+    max-width: 100%; 
   }
-  /* Clear the margin for the last figure in the row */
+ 
   .product-row figure:last-child {
     margin-right: 0;
   }
@@ -68,7 +68,7 @@
   overflow: hidden;
   margin: 10px;
   margin-top: 50px;
-  max-width: 100%; /* Set max-width to 100% */
+  max-width: 100%; 
   width: 100%;
   background: #ffffff;
   text-align: left;
@@ -168,11 +168,11 @@
 
 @media only screen and (max-width: 600px) {
   .product-row {
-      flex-direction: column; /* Stack cards in a column */
-      align-items: center; /* Center cards horizontally */
+      flex-direction: column; 
+      align-items: center; 
   }
 
   .snip1418 {
-      max-width: 100%; /* Set max-width to 100% for responsiveness */
+      max-width: 100%; 
   }
 }
