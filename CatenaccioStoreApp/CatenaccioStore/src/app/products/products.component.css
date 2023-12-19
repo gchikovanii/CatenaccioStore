@@ -766,3 +766,15 @@ footer{
     line-height: 24px; 
     margin-right: 26px;
   }
+
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .filter-container p {
+    margin-right: 10px;
+    margin-top: 2px;
+  }
