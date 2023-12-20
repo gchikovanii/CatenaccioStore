@@ -7,6 +7,9 @@ import { OrdersComponent } from './orders/orders.component';
 import { BasketComponent } from './basket/basket.component';
 import { AccountComponent } from './account/account.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PanelProductsComponent } from './adminpanel/panel-products/panel-products.component';
+import { PanelUsersComponent } from './adminpanel/panel-users/panel-users.component';
+import { PanelCategoryComponent } from './adminpanel/panel-category/panel-category.component';
 
 
 export const routes: Routes = [
@@ -18,4 +21,7 @@ export const routes: Routes = [
     { path: 'basket', component: BasketComponent },
     { path: 'account', component: AccountComponent },
     { path: 'payment', component: PaymentComponent },
+    { path: 'adminpanel/panel-products', component: PanelProductsComponent },
+    { path: 'adminpanel/panel-users', component: PanelUsersComponent },
+    { path: 'adminpanel/panel-category', component: PanelCategoryComponent },
   ];
