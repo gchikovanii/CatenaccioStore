@@ -32,6 +32,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {FlexLayoutServerModule} from '@angular/flex-layout/server';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { HttpClientModule } from '@angular/common/http'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { LoginComponent } from './account/login/login.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     PaymentComponent,
     ProductsComponent,
     AccountComponent,
-    OrdersComponent
+    OrdersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +76,8 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FlexLayoutServerModule
+    FlexLayoutServerModule,
+    MatDatepickerModule
   ],
   providers: [
     provideClientHydration()

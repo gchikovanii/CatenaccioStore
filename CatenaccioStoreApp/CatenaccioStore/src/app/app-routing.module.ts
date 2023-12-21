@@ -11,6 +11,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PanelProductsComponent } from './adminpanel/panel-products/panel-products.component';
 import { PanelUsersComponent } from './adminpanel/panel-users/panel-users.component';
 import { PanelCategoryComponent } from './adminpanel/panel-category/panel-category.component';
+import { LoginComponent } from './account/login/login.component';
 
 export const routes: Routes = [
   { path: '', component: OffersComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'adminpanel', component: AdminpanelComponent },
   { path: 'basket', component: BasketComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'adminpanel/panel-products', component: PanelProductsComponent },
   { path: 'adminpanel/panel-users', component: PanelUsersComponent },

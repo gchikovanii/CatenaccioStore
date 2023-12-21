@@ -1,0 +1,28 @@
+<div class="centered">
+   <div class="wrapper">
+     <div class="title">
+       Login Form
+     </div>
+     <form action="#">
+       <div class="field">
+         <input [(ngModel)]="loginDto.email" type="text" name="email" required>
+         <label>Email Address</label>
+       </div>
+       <div class="field">
+         <input [(ngModel)]="loginDto.password" type="password" name="password" required>
+         <label>Password</label>
+       </div>
+       <div class="content">
+         <div class="pass-link">
+           <a href="#">Forgot password?</a>
+         </div>
+       </div>
+       <div class="field">
+         <input (click)="login(loginDto)" type="submit" value="Login">
+       </div>
+       <div class="signup-link">
+         Not a member? <a routerLink="/account">Signup now</a>
+       </div>
+     </form>
+   </div>
+ </div>
