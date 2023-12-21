@@ -29,6 +29,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {FlexLayoutServerModule} from '@angular/flex-layout/server';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
@@ -68,7 +69,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutServerModule
   ],
   providers: [
     provideClientHydration()

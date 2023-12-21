@@ -23,7 +23,7 @@ export class AccountComponent {
   }
   login(loginDto: Login){
     this._autheticationService.login(loginDto).subscribe(jwtDto => {
-        localStorage.setItem('jwtToken',jwtDto.token);
+        localStorage.setItem('jwtToken', jwtDto);
     });
   }
 }

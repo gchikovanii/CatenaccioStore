@@ -12,7 +12,6 @@ namespace CatenaccioStore.Application.Services.Accounts.DTOs
         [Required(ErrorMessage = "UserName is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Minimum Length must be at least 3 and maximum 50 strongly typed characters!")]
         public string UserName { get; set; }
-        public string Gender { get; set; }
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
@@ -33,5 +32,7 @@ namespace CatenaccioStore.Application.Services.Accounts.DTOs
         [Display(Name = "UserName")]
         [Required(ErrorMessage = "UserName is required")]
         public string PhoneNumber { get; set; }
+        public string Gender { get; set; }
+
     }
 }

@@ -3,12 +3,12 @@
         <input type="checkbox" id="chk" aria-hidden="true">
             <div class="signup">
                 <form>
-                    <label for="chk" aria-hidden="true">Sign Up</label>
-                    <input type="text" name="txt" placeholder="User name" required="">
-                    <input type="email" name="email" placeholder="Email" required="">
-                    <input type="password" name="pswd" placeholder="Password" required="">
-                    <input type="password" name="pswd" placeholder="Repeate Password" required="">
-                    <button mat-raised-button color="primary">Sign Up</button>
+                    <label  for="chk" aria-hidden="true">Sign Up</label>
+                    <input [(ngModel)]="registerDto.UserName" type="text" name="txt" placeholder="User name" required="">
+                    <input [(ngModel)]="registerDto.Email" type="email" name="email" placeholder="Email" required="">
+                    <input [(ngModel)]="registerDto.Password" type="password" name="pswd" placeholder="Password" required="">
+                    <input [(ngModel)]="registerDto.ConfirmPassword" type="password" name="pswd" placeholder="Repeate Password" required="">
+                    <button mat-raised-button color="primary" (click)="register(registerDto)">Sign Up</button>
                 </form>
             </div>
 

@@ -32,7 +32,7 @@ builder.Services.AddIdentity<AppUser, AppRole>()
 #endregion
 builder.Services.AddCors(options => options.AddPolicy("FrontEnd",policy =>
 {
-    policy.WithOrigins("http://localhost:4200/").AllowAnyMethod().AllowAnyHeader();
+    policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
 }));
 
 var app = builder.Build();
@@ -48,6 +48,7 @@ app.UseCulture();
 app.UseGlobalExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseHttpsRedirection();
 app.UseCors("FrontEnd");
 app.MapControllers();
 

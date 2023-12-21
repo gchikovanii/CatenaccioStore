@@ -10,15 +10,16 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  registerUrl = 'Account/Register';
+  registerUrl = 'Account/Registration';
   loginUrl = 'Account/Login';
 
   constructor(private http: HttpClient) { }
 
-  public register(user: Register) : Observable<Jwt>{
-    return this.http.post<Jwt>(`${environment.apiUrl}/${this.registerUrl}`,user);
+  public register(user: Register): Observable<boolean> {
+    console.log('Registration Request Payload:', user);
+    return this.http.post<boolean>(`${environment.apiUrl}/${this.registerUrl}`, user);
   }
-  public login(user: Login) : Observable<Jwt>{
-    return this.http.post<Jwt>(`${environment.apiUrl}/${this.loginUrl}`,user);
+  public login(user: Login): Observable<string> {
+    return this.http.post(`${environment.apiUrl}/${this.loginUrl}`, user, { responseType: 'text' });
   }
 }
