@@ -4,6 +4,7 @@ import { Login } from '../models/login';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Jwt } from '../models/jwt';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-account',
@@ -15,14 +16,14 @@ export class AccountComponent {
   registerDto = new Register();
   jwtDto = new Jwt();
 
-  // constructor(private http: HttpClient){}
+  constructor(private _autheticationService: AuthenticationService){}
 
-  // register(user : Register): Observable<Jwt>{
-  //   return this.http.post<Jwt>(`${environment.apiUrl}/${this.registerUrl}`,user);
-  //  }
-
-  // login(user : Login): Observable<Jwt>{
-  //   return this.http.post<Jwt>(`${environment.apiUrl}/${this.loginUrl}`,user);
-  //  }
-
+  register(registerDto: Register){
+    this._autheticationService.register(registerDto).subscribe();
+  }
+  login(loginDto: Login){
+    this._autheticationService.login(loginDto).subscribe(jwtDto => {
+        localStorage.setItem('jwtToken',jwtDto.token);
+    });
+  }
 }

@@ -30,6 +30,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 #endregion
+builder.Services.AddCors(options => options.AddPolicy("FrontEnd",policy =>
+{
+    policy.WithOrigins("http://localhost:4200/").AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 
@@ -44,6 +48,7 @@ app.UseCulture();
 app.UseGlobalExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseCors("FrontEnd");
 app.MapControllers();
 
 #region APP RUN

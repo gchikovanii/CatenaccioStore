@@ -29,7 +29,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     CommonModule,
     FlexLayoutModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
