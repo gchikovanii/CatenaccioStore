@@ -3,8 +3,9 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Register } from './models/register';
 import { Login } from './models/login';
-import { Observable } from 'rxjs';
+import { Observable,of } from 'rxjs';
 import { environment } from '../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -48,17 +49,27 @@ export class AuthenticationService {
     }
     return null;
   }
-  IsAdmin(): boolean {
+  getToken(): string | null {
+    return localStorage.getItem('jwtToken');
+  }
+  public getRole(): string | null {
+    const token = this.getToken();
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload.role || null;
+    }
+    return null;
+  }
+  public IsAdmin(): Observable<boolean> {
     const jwtToken = localStorage.getItem('jwtToken');
     if (jwtToken) {
       const payload = JSON.parse(atob(jwtToken.split('.')[1]));
-      return payload.role === 'Admin';
+      return of(payload.role === 'Admin');
     }
-    return false;
+    return of(false);
   }
   public logout(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Clear the JWT token from localStorage
       localStorage.removeItem('jwtToken');
     }
   }

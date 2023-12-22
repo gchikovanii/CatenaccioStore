@@ -17,7 +17,5 @@ export class AdminpanelComponent implements OnInit {
     return this.authService.isAuthenticated();
   }
 
-  IsAdmin(): boolean {
-    return this.authService.IsAdmin();
-  }
+  
 }

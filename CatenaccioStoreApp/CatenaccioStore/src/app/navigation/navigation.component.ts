@@ -2,17 +2,25 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css'
+  styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
   isSmallScreen: boolean = false;
   userName: string | null = null;
   show: boolean = false;
-  constructor(private breakpointObserver: BreakpointObserver,private authService: AuthenticationService,private router: Router) {
+  isAdmin$: Observable<boolean>;
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private authService: AuthenticationService,
+    private router: Router
+  ) {
+    this.isAdmin$ = this.authService.IsAdmin();
     this.checkScreenSize();
   }
 
@@ -28,7 +36,8 @@ export class NavigationComponent implements OnInit {
   private checkScreenSize() {
     this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 900px)');
   }
- isAuthenticated(): boolean {
+
+  isAuthenticated(): boolean {
     return this.authService.isAuthenticated();
   }
 
@@ -36,16 +45,11 @@ export class NavigationComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
-  IsAdmin(): boolean {
-    this.show = this.authService.IsAdmin();
-    if(this.show == true)
-      return true;
-    return false;
-  }
-  
+
   openRegistration() {
-    
+    // Implement logic to open the registration form
   }
+
   openLogin() {
     // Implement logic to open the login form
   }
