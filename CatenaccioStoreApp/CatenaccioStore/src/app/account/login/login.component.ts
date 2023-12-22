@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Login } from '../../models/login';
 import { AuthenticationService } from '../../authentication.service';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +10,19 @@ import { Route, Router } from '@angular/router';
 })
 export class LoginComponent {
   loginDto = new Login();
+  errorMessage: string | null = null;
 
   constructor(private _autheticationService: AuthenticationService, private router : Router){}
-  login(loginDto: Login){
-    this._autheticationService.login(loginDto).subscribe(jwtDto => {
+  login(loginDto: Login): void {
+    this.errorMessage = null;
+    this._autheticationService.login(loginDto).subscribe(
+      jwtDto => {
         localStorage.setItem('jwtToken', jwtDto);
         this.router.navigate(['/']);
-    });
+      },
+      error => {
+        this.errorMessage = error; 
+      }
+    );
   }
 }

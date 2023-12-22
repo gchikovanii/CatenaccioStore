@@ -1,9 +1,9 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Register } from './models/register';
 import { Login } from './models/login';
-import { Observable,of } from 'rxjs';
+import { Observable,catchError,of, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
 import { Router } from '@angular/router';
 
@@ -24,8 +24,18 @@ export class AuthenticationService {
     return this.http.post<boolean>(`${environment.apiUrl}/${this.registerUrl}`, user);
   }
 
-  public login(user: Login): Observable<string> {
-    return this.http.post(`${environment.apiUrl}/${this.loginUrl}`, user, { responseType: 'text' });
+  public login(user: any): Observable<string> {
+    return this.http.post(`${environment.apiUrl}/${this.loginUrl}`, user, { responseType: 'text' })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 500) {
+            return throwError('Incorrect Email or Password');
+          } 
+          else {
+            return throwError('An unexpected error occurred. Please try again later.');
+          }
+        })
+      );
   }
 
   public isAuthenticated(): boolean {
@@ -40,10 +50,7 @@ export class AuthenticationService {
     if (isPlatformBrowser(this.platformId)) {
       const jwtToken = localStorage.getItem('jwtToken');
       if (jwtToken) {
-        // Decode the JWT token to get the payload
         const payload = JSON.parse(atob(jwtToken.split('.')[1]));
-
-        // Assuming the userName is present in the payload
         return payload.userName || null;
       }
     }

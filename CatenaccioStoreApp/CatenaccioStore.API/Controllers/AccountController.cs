@@ -134,7 +134,10 @@ namespace CatenaccioStore.API.Controllers
         {
             try
             {
-                return Ok(await _accountService.LogIn(input));
+                var result = await _accountService.LogIn(input);
+                if(result.Length > 0)
+                    return Ok(await _accountService.LogIn(input));
+                throw new Exception();
             }
             catch (Exception ex)
             {
