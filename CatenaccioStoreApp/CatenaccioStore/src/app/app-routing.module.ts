@@ -12,20 +12,21 @@ import { PanelProductsComponent } from './adminpanel/panel-products/panel-produc
 import { PanelUsersComponent } from './adminpanel/panel-users/panel-users.component';
 import { PanelCategoryComponent } from './adminpanel/panel-category/panel-category.component';
 import { LoginComponent } from './account/login/login.component';
+import { AuthGuard } from './shared/authguard.guard';
 
 export const routes: Routes = [
   { path: '', component: OffersComponent },
   { path: 'product', component: ProductsComponent }, 
   { path: 'orders', component: OrdersComponent }, 
   { path: 'contact', component: ContactComponent }, 
-  { path: 'adminpanel', component: AdminpanelComponent },
+  { path: 'adminpanel', component: AdminpanelComponent},
   { path: 'basket', component: BasketComponent },
-  { path: 'account', component: AccountComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent ,canActivate: [AuthGuard]},
   { path: 'payment', component: PaymentComponent },
-  { path: 'adminpanel/panel-products', component: PanelProductsComponent },
-  { path: 'adminpanel/panel-users', component: PanelUsersComponent },
-  { path: 'adminpanel/panel-category', component: PanelCategoryComponent },
+  { path: 'adminpanel/panel-products', component: PanelProductsComponent},
+  { path: 'adminpanel/panel-users', component: PanelUsersComponent},
+  { path: 'adminpanel/panel-category', component: PanelCategoryComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

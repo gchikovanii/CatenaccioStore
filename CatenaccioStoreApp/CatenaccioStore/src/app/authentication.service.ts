@@ -1,9 +1,9 @@
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Register } from './models/register';
 import { Login } from './models/login';
 import { Observable } from 'rxjs';
-import { Jwt } from './models/jwt';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -13,13 +13,53 @@ export class AuthenticationService {
   registerUrl = 'Account/Registration';
   loginUrl = 'Account/Login';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {}
 
   public register(user: Register): Observable<boolean> {
     console.log('Registration Request Payload:', user);
     return this.http.post<boolean>(`${environment.apiUrl}/${this.registerUrl}`, user);
   }
+
   public login(user: Login): Observable<string> {
     return this.http.post(`${environment.apiUrl}/${this.loginUrl}`, user, { responseType: 'text' });
+  }
+
+  public isAuthenticated(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      const jwtToken = localStorage.getItem('jwtToken');
+      return !!jwtToken;
+    }
+    return false;
+  }
+
+  public getUserNameFromToken(): string | null {
+    if (isPlatformBrowser(this.platformId)) {
+      const jwtToken = localStorage.getItem('jwtToken');
+      if (jwtToken) {
+        // Decode the JWT token to get the payload
+        const payload = JSON.parse(atob(jwtToken.split('.')[1]));
+
+        // Assuming the userName is present in the payload
+        return payload.userName || null;
+      }
+    }
+    return null;
+  }
+  IsAdmin(): boolean {
+    const jwtToken = localStorage.getItem('jwtToken');
+    if (jwtToken) {
+      const payload = JSON.parse(atob(jwtToken.split('.')[1]));
+      return payload.role === 'Admin';
+    }
+    return false;
+  }
+  public logout(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Clear the JWT token from localStorage
+      localStorage.removeItem('jwtToken');
+    }
   }
 }

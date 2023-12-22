@@ -10,7 +10,7 @@
         <button mat-button routerLink="/product">Products</button>
         <button mat-button routerLink="/orders">Orders</button>
         <button mat-button routerLink="/contact">Contact</button>
-        <button mat-button routerLink="/adminpanel">Admin Panel</button>
+        <button *ngIf="IsAdmin() === false" mat-button routerLink="/adminpanel">Admin Panel</button>
       </mat-menu>
       <button mat-icon-button  routerLink="/account">
         <mat-icon>person</mat-icon>
@@ -27,16 +27,20 @@
       <a mat-button routerLink="/contact">Contact</a>
       <a mat-button routerLink="/adminpanel">Admin Panel</a>
     </div> 
-  
     <div class="icons">
-      <button mat-icon-button routerLink="/account">
+      <button mat-icon-button routerLink="/basket" *ngIf="isAuthenticated()">
+        <mat-icon>shopping_basket</mat-icon>
+      </button>
+      
+      <button mat-icon-button routerLink="/account" *ngIf="!isAuthenticated()">
         <mat-icon>person</mat-icon>
       </button>
-      <button mat-icon-button routerLink="/login">
+      
+      <button mat-icon-button routerLink="/login" *ngIf="!isAuthenticated()"> 
         <mat-icon>add_person</mat-icon>
       </button>
-      <button mat-icon-button routerLink="/basket">
-        <mat-icon>shopping_basket</mat-icon>
+      <button style="display: flex; justify-content: center;" mat-icon-button *ngIf="isAuthenticated()" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
       </button>
     </div>
   </mat-toolbar>
