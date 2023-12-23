@@ -13,6 +13,7 @@ namespace CatenaccioStore.Persistence.DataContext
         {
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Offer> Offers { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
