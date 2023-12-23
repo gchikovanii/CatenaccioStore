@@ -16,7 +16,7 @@ namespace CatenaccioStore.API.Controllers
         {
             _productService = productService;
         }
-        [Authorize(Roles = UserType.AdminModerator)]
+        //[Authorize(Roles = UserType.AdminModerator)]
         [HttpGet]
         public async Task<IActionResult> GetProducts(CancellationToken token)
         {

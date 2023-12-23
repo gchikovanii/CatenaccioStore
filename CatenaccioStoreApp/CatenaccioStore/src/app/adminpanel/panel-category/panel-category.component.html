@@ -1,22 +1,21 @@
-<p>panel-category works!</p>
 <table>
     <caption>Products List</caption>
     <thead>
       <tr>
-        <th scope="col">Category Name</th>
         <th scope="col">Category Id</th>
+        <th scope="col">Category Name</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-label="Category Name">GMS</td>
-        <td data-label="Category Id">1</td>
+      <tr *ngFor="let category of categories">
+        <td data-label="Category Id">{{category.id}}</td>
+        <td data-label="Category Name">{{category.name}}</td>
         <td data-label="Action">
-              <button mat-button>
-                <mat-icon aria-hidden="false" fontIcon="edit" style="color:rgb(199, 199, 48)"></mat-icon>
+              <button (click)="openUpdateCategoryDialog(category)" mat-button>
+                <mat-icon  aria-hidden="false" fontIcon="edit" style="color:rgb(199, 199, 48)"></mat-icon>
               </button>
-              <button mat-button>
+              <button mat-button (click)="deleteCategory(category.name)">
                 <mat-icon aria-hidden="false" fontIcon="delete" style="color: rgb(188, 9, 9);"></mat-icon>
               </button>
 
@@ -25,7 +24,7 @@
     </tbody>
   </table>
   <div class="btns">
-    <button mat-button style="margin-right: 10px;">
+    <button (click)="openAddCategoryDialog()" mat-button style="margin-right: 10px;">
         <mat-icon aria-hidden="false" fontIcon="add" style="color: rgb(35, 35, 151);"></mat-icon>
       </button>
     <button style="margin-right: 10px;" routerLink="/adminpanel" mat-raised-button color="primary">Main Panel</button>

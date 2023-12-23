@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Add Category</h2>
+<div mat-dialog-content>
+  <p>Enter the new category name:</p>
+  <input type="text" [(ngModel)]="data.categoryName" placeholder="New Category Name">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button color="primary" (click)="addCategory()">Add</button>
+</div>

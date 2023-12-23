@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Update Category</h2>
+<div mat-dialog-content>
+  <p>Update category name:</p>
+  <input type="text" [(ngModel)]="data.categoryName" placeholder="Current Category Name" readonly>
+  <input type="text" [(ngModel)]="data.newCategoryName" placeholder="New Category Name">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button color="primary" (click)="updateCategory()">Update</button>
+</div>

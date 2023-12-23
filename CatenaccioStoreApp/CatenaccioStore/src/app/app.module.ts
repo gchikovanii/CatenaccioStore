@@ -34,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'; 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { LoginComponent } from './account/login/login.component';
+import { AddCategoryDialogComponent } from './adminpanel/panel-category/add-category-dialog/add-category-dialog.component';
+import { UpdateCategoryDialogComponent } from './adminpanel/panel-category/update-category-dialog/update-category-dialog.component';
 
 
 
@@ -53,7 +55,9 @@ import { LoginComponent } from './account/login/login.component';
     ProductsComponent,
     AccountComponent,
     OrdersComponent,
-    LoginComponent
+    LoginComponent,
+    AddCategoryDialogComponent,
+    UpdateCategoryDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ namespace CatenaccioStore.API.Controllers
         {
             _categoryService = categoryService;
         }
-        [Authorize(Roles = UserType.AdminModerator)]
+        //[Authorize(Roles = UserType.AdminModerator)]
         [HttpGet]
         public async Task<IActionResult> GetCategories(CancellationToken token)
         {
@@ -29,9 +29,9 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.AdminModerator)]
-        [HttpPost]
-        public async Task<IActionResult> AddCategory(CancellationToken token,CreateCategoryDto input)
+        //[Authorize(Roles = UserType.AdminModerator)]
+        [HttpPost("AddCategory")]
+        public async Task<IActionResult> AddCategory(CancellationToken token, CreateCategoryDto input)
         {
             try
             {
@@ -43,8 +43,8 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.AdminModerator)]
-        [HttpPut]
+        //[Authorize(Roles = UserType.AdminModerator)]
+        [HttpPut("Update")]
         public async Task<IActionResult> Update(CancellationToken token, string categoryName, string newCategoryName)
         {
             try
@@ -57,8 +57,8 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.AdminModerator)]
-        [HttpDelete]
+        //[Authorize(Roles = UserType.AdminModerator)]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> Delete(CancellationToken token,string categoryName)
         {
             try

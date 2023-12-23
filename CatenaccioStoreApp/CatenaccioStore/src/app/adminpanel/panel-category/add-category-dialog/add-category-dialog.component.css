@@ -1,0 +1,26 @@
+h2 {
+  color: #333; /* Change text color */
+}
+
+mat-dialog-content {
+  margin-top: 10px;
+}
+
+p {
+  color: #666;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+button {
+  margin-left: 8px;
+}
