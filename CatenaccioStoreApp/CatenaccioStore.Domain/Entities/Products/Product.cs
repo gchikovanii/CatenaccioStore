@@ -19,5 +19,6 @@ namespace CatenaccioStore.Domain.Entities.Products
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public ICollection<ProductImage> Images { get; set; }
+        public ICollection<Offer> Offers { get; set; }
     }
 }
