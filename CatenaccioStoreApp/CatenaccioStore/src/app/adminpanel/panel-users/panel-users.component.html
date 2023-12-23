@@ -1,4 +1,3 @@
-<p>panel-users works!</p>
 <table>
     <caption>Users List</caption>
     <thead>
@@ -10,15 +9,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-label="User Name">chiko69</td>
-        <td data-label="Email">gchikovanii25 gmail.com</td>
-        <td data-label="Phone Number">574093134</td>
+      <tr *ngFor="let user of users">
+        <td data-label="User Name">{{ user.userName }}</td>
+        <td data-label="Email">{{ user.email }}</td>
+        <td data-label="Phone Number">{{ user.phoneNumber }}</td>
         <td data-label="Action">
-              <button mat-button>
+              <button (click)="deleteUser(user.email)" mat-button>
                 <mat-icon aria-hidden="false" fontIcon="delete" style="color: red;"></mat-icon>
               </button>
-
         </td>
       </tr>
     </tbody>

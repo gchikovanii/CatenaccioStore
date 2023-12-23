@@ -1,11 +1,9 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Register } from './models/register';
-import { Login } from './models/login';
+import { Register } from '../app/models/register';
 import { Observable,catchError,of, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +54,18 @@ export class AuthenticationService {
     }
     return null;
   }
+
+  public getUserEmail(): string | null {
+    if (isPlatformBrowser(this.platformId)) {
+      const jwtToken = localStorage.getItem('jwtToken');
+      if (jwtToken) {
+        const payload = JSON.parse(atob(jwtToken.split('.')[1]));
+        return payload.email || null;
+      }
+    }
+    return null;
+  }
+
   getToken(): string | null {
     return localStorage.getItem('jwtToken');
   }

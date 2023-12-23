@@ -30,7 +30,7 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.AdminModerator)]
+        //[Authorize(Roles = UserType.AdminModerator)]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
@@ -100,9 +100,9 @@ namespace CatenaccioStore.API.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
-        [Authorize(Roles = UserType.Admin)]
-        [HttpDelete]
-        public async Task<IActionResult> Delete(string email)
+        //[Authorize(Roles = UserType.Admin)]
+        [HttpDelete("Delete")]
+        public async Task<IActionResult> Delete([FromQuery] string email)
         {
             try
             {
